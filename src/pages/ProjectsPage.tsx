@@ -58,7 +58,7 @@ const ProjectCard = ({name, desc, images}: {name: string, desc: string, images: 
         <p className="h-8 w-full z-10 relative bg-white top-0 text-center pb-3 pt-1 text-xs">{desc}</p>
         <p className="h-8 w-full z-10 relative bg-white top-0 text-center pb-3 pt-1">{name}</p>
         <div className="justify-content-center">
-          <img className="w-full" src={images[0]} />
+          <img className="w-full" src={images[0]} alt={name} />
         </div>
       </div>
     </div>
