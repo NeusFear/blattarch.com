@@ -1,7 +1,16 @@
+import Carousel, {CarouselItem} from '../components/ScreenCarousel'
+import fam_feature from '../images/projects/temp/fam_feature.jpg'
+
 const LandingPage = () => {
+
+  const images = [
+    fam_feature,
+    fam_feature
+  ]
+
   return (
     <>
-      <p>Landing Page</p>
+      <Carousel images={images} />
     </>
   );
 };
