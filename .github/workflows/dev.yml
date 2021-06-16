@@ -23,5 +23,5 @@ jobs:
         ftp-server: sftp://51.222.31.214/var/www/brandonmdavis.com/test
         ftp-username: ubuntu
         ftp-password: ${{ secrets.WEBSITE_FTP_PASSWORD }}
-        known-hosts: ${{ secrets.WEBSITE_FTP_KNOWN_HOSTS }}
+        known-hosts: ${{ secrets.WEBSITE_KNOWN_HOSTS }}
         args: --all
