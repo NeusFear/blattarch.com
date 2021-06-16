@@ -1,7 +1,9 @@
-const StudioContainer = () => {
+const LandingPage = () => {
   return (
-    <div>Hello World!</div>
+    <>
+      <p>Landing Page</p>
+    </>
   );
 };
 
-export default StudioContainer;
+export default LandingPage;
