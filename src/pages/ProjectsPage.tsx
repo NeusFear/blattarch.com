@@ -55,7 +55,7 @@ const ProjectList = () => {
 const ProjectCard = ({name, desc, images}: {name: string, desc: string, images: any}) => {
 
   return(
-    <div className="w-1/2 p-2">
+    <div className="lg:w-1/2 w-full p-2">
       <div className="w-full h-104 flex flex-col-reverse overflow-hidden bg-cover bg-center group" style={{ backgroundImage: `url(${images[0]})` }}>
       </div>
       <div className="w-full z-10 relative border-gray-300 border-l border-b border-r bg-white text-center">
