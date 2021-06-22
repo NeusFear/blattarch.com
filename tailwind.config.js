@@ -9,7 +9,7 @@ module.exports = {
       },
       height: {
         104: '27rem',
-        200: 'calc(100vh - 60px);'
+        200: 'calc(100vh - 65px);'
       }
     },
     colors: {

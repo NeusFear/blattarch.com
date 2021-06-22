@@ -1,13 +1,47 @@
+import { useEffect } from "react";
 import { useState } from "react"
 
 const Carousel = ({images}: {images: any}) => {
 
     const [position, setPosition] = useState(0);
+    const [transition, setTransition] = useState(true);
+
+    useEffect(() => {
+        setTransition(true);
+        if(position < 0) {
+            setPosition(images.length - 1);
+        }
+        if(position === 0 && !transition) {
+            setPosition(1);
+        }
+        if(position >= images.length) {
+            setTransition(false);
+        }
+    }, [position, images.length, transition])
+
+    useEffect(() => {
+        setPosition(0);
+    }, [transition])
+
+    function advance() {
+        setPosition(position + 1)
+    }
+
+    function back() {
+        setPosition(position - 1);
+    }
 
     return(
-        <div className="h-200 overflow-hidden bg-red-100" style={{width: (100*images.length) + "vw"}}>
-            <div className="h-full transform flex flex-row" style={{width: (100*images.length) + "vw ", transform: 'translate(-0%)'}}>
-                {images.map(i => <CarouselItem img={i} />)}
+        <div className="h-200 overflow-hidden bg-red-100" style={{width: (100*(images.length+1)) + "vw"}}>
+            <div className="w-10 h-10 rounded-full bg-white absolute z-50 top-1/2 ml-4 pt-1.5" onClick={() => back()}>
+                <svg width="30" height="30"><polygon points="5, 13, 25, 25, 25, 0" fill="#666666" /></svg>
+            </div>
+            <div className="w-10 h-10 rounded-full bg-white absolute z-50 top-1/2 right-0 transform rotate-180 pt-1.5 mr-4" onClick={() => advance()}>
+                <svg width="30" height="30"><polygon points="5, 13, 25, 25, 25, 0" fill="#666666" /></svg>
+            </div>
+            <CarouselIndicators position={position} numSlides={images.length}/>
+            <div className={(transition && "ease-in-out transition-transform duration-500 ") + "h-full transform flex flex-row"} style={{width: (100*images.length) + "vw ", transform: 'translate(-' + (100/images.length) * position + '%)'}}>
+                {images.map(i => <CarouselItem key={i.name} img={i.image} />)}
             </div>
         </div>
     )
@@ -25,12 +59,12 @@ export const CarouselItem = ({img}: {img: any}) => {
 
 const CarouselIndicators = ({position, numSlides}: {position: number, numSlides: number}) => {
 
-    var bubbles = Element[numSlides];
-    for (let bubble = 0; bubble < numSlides; bubble++) {
-        bubbles.push(<div className={(position === bubble ? "bg-white" : "bg-transparent") + " border-2 border-white w-8 h-8 rounded-full"}></div>)
-    }
+    //var bubbles = Element[numSlides];
+    //for (let bubble = 0; bubble < numSlides; bubble++) {
+    //    bubbles.push(<div className={(position === bubble ? "bg-white" : "bg-transparent") + " border-2 border-white w-8 h-8 rounded-full"}></div>)
+    //}
 
     return(
-        <div className="flex flex-row">{bubbles}</div>
+        <div className="flex flex-row absolute bottom-10">test</div>
     )
 }
