@@ -6,10 +6,6 @@ module.exports = {
       transitionProperty: {
         'height': 'height',
         'grid-template-rows': 'grid-template-rows'
-      },
-      height: {
-        104: '27rem',
-        200: 'calc(100vh - 65px);'
       }
     },
     colors: {

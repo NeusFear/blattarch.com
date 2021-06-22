@@ -34,12 +34,10 @@ const ProjectsPage = () => {
 const CategoryCard = ({category, desc}: {category: string, desc: string}) => {
 
   return(
-    <div className="lg:w-1/4 md:w-1/3 w-1/2 h-64 p-2">
-      <div className="min-w-full h-full flex flex-col-reverse shadow-md hover:shadow-2xl hover:border-gray-400 bg-cover bg-center" style={{ backgroundImage: `url(${fam_feature})` }}>
-      <div className="bg-white w-full relative">
-        <p className="font-bold px-2 text-lg transform -mb-3 text-blue-800 truncate">{category}</p>
+    <div className="lg:w-1/4 md:w-1/3 w-1/2 p-2">
+      <div className="bg-gray-100 rounded-md px-4 w-full relative">
+        <p className="px-2 text-lg transform -mb-3 truncate">{category}</p>
         <p className="text-xs px-2 pt-1 pb-2 text-gray-600 truncate">{desc}</p>
-      </div>
       </div>
     </div>
   )
@@ -48,7 +46,7 @@ const CategoryCard = ({category, desc}: {category: string, desc: string}) => {
 const ProjectList = () => {
 
   return(
-    <div className="w-full flex-wrap flex">
+    <div className="w-5/6 flex-wrap flex self-center">
       {projects.map(p => <ProjectCard name={p.name} desc={p.desc} images={p.images} />)}
     </div>
   )
@@ -57,11 +55,13 @@ const ProjectList = () => {
 const ProjectCard = ({name, desc, images}: {name: string, desc: string, images: any}) => {
 
   return(
-    <div className="md:w-1/2 w-full h-1/2 p-2">
-      <div className="w-full h-104 flex flex-col-reverse bg-gray-200 rounded-md shadow-lg overflow-hidden hover:shadow-xl hover:border-gray-400 border-4 bg-cover bg-center" style={{ backgroundImage: `url(${images[0]})` }}>
-        <p className="w-full z-10 relative bg-white top-0 text-center pb-3 pt-1 text-xs">{desc}</p>
-        <p className="h-8 w-full z-10 relative bg-white top-0 text-center pb-3 pt-1">{name}</p>
+    <div className="w-1/2 p-2">
+      <div className="w-full h-104 flex flex-col-reverse overflow-hidden bg-cover bg-center group" style={{ backgroundImage: `url(${images[0]})` }}>
       </div>
+      <div className="w-full z-10 relative border-gray-300 border-l border-b border-r bg-white text-center">
+          <p className="pt-1">{name}</p>
+          <p className="pb-3 pt-1 text-xs">{desc}</p>
+        </div>
     </div>
   )
 }

@@ -20,20 +20,20 @@ export default function App() {
     <Router>
       <div className="overflow-hidden">
         <div>
-          <nav className="bg-gray-800">
+          <nav className="bg-white bg-opacity-40 absolute w-full z-50">
             <div className="mx-auto px-4 sm:px-6 lg:px-8">
               <div className="flex items-center justify-between h-16">
                 <div className="flex items-center">
-                  <div className="flex-shrink-0 text-white">
+                  <div className="flex-shrink-0 text-gray-800">
                     [ logo ]
                   </div>
                   <div className="hidden md:block">
-                    <div className="ml-10 flex items-baseline space-x-4 text-white">
-                        <Link to="/" className="bg-gray-700 hover:bg-gray-600 py-2 px-4 no-underline rounded">Home</Link>
-                        <Link to="/projects" className="bg-gray-700 hover:bg-gray-600 py-2 px-4 no-underline rounded">Projects</Link>
-                        <Link to="/about" className="bg-gray-700 hover:bg-gray-600 py-2 px-4 no-underline rounded">About</Link>
-                        <Link to="/press" className="bg-gray-700 hover:bg-gray-600 py-2 px-4 no-underline rounded">Press</Link>
-                        <Link to="/contact" className="bg-gray-700 hover:bg-gray-600 py-2 px-4 no-underline rounded">Contact</Link>
+                    <div className="ml-10 flex space-x-2 text-gray-700 hover:text-black w-full text-center">
+                        <Link to="/" className="hover:bg-white py-2 px-4 no-underline hover:bg-opacity-40 transition-all duration-100">Home</Link>
+                        <Link to="/projects" className="hover:bg-white py-2 px-4 no-underline hover:bg-opacity-40 transition-all duration-100">Projects</Link>
+                        <Link to="/about" className="hover:bg-white py-2 px-4 no-underline hover:bg-opacity-40 transition-all duration-100">About</Link>
+                        <Link to="/press" className="hover:bg-white py-2 px-4 no-underline hover:bg-opacity-40 transition-all duration-100">Press</Link>
+                        <Link to="/contact" className="hover:bg-white py-2 px-4 no-underline hover:bg-opacity-40 transition-all duration-100">Contact</Link>
                     </div>
                   </div>
                 </div>
@@ -41,7 +41,7 @@ export default function App() {
                   <button
                     onClick={() => setIsOpen(!isOpen)}
                     type="button"
-                    className="bg-gray-900 inline-flex items-center justify-center p-2 rounded-md text-gray-400 hover:text-white hover:bg-gray-800 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-offset-gray-800 focus:ring-white"
+                    className="bg-white bg-opacity-40 inline-flex items-center justify-center p-2 rounded-md text-gray-700 hover:text-white hover:bg-gray-400 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-offset-gray-800 focus:ring-white"
                     aria-controls="mobile-menu"
                     aria-expanded="false"
                   >
@@ -66,12 +66,12 @@ export default function App() {
             >
               {(ref) => (
                 <div className="md:hidden w-full" id="mobile-menu">
-                  <div ref={ref} className="px-2 pt-2 pb-3 sm:px-3 text-white block w-full">
-                    <Link to="/" className="bg-gray-700 hover:bg-gray-600 py-2 px-4 no-underline w-96">Home</Link><br/><br/>
-                    <Link to="/projects" className="bg-gray-700 hover:bg-gray-600 py-2 px-4 no-underline w-full">Projects</Link><br/><br/>
-                    <Link to="/about" className="bg-gray-700 hover:bg-gray-600 py-2 px-4 no-underline w-full">About</Link><br/><br/>
-                    <Link to="/press" className="bg-gray-700 hover:bg-gray-600 py-2 px-4 no-underline w-full">Press</Link><br/><br/>
-                    <Link to="/contact" className="bg-gray-700 hover:bg-gray-600 py-2 px-4 no-underline w-full">Contact</Link><br/>
+                  <div ref={ref} className="px-2 pt-2 pb-3 sm:px-3 text-black block w-full">
+                    <Link to="/" className="py-2 px-4 no-underline w-full block">Home</Link>
+                    <Link to="/projects" className="py-2 px-4 no-underline w-full block">Projects</Link>
+                    <Link to="/about" className="py-2 px-4 no-underline w-full block">About</Link>
+                    <Link to="/press" className="py-2 px-4 no-underline w-full block">Press</Link>
+                    <Link to="/contact" className="py-2 px-4 no-underline w-full block">Contact</Link>
                   </div>
                 </div>
               )}

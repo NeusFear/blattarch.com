@@ -32,15 +32,15 @@ const Carousel = ({images}: {images: any}) => {
     }
 
     return(
-        <div className="h-200 overflow-hidden bg-red-100" style={{width: (100*(images.length+1)) + "vw"}}>
-            <div className="w-10 h-10 rounded-full bg-white absolute z-50 top-1/2 ml-4 pt-1.5" onClick={() => back()}>
-                <svg width="30" height="30"><polygon points="5, 13, 25, 25, 25, 0" fill="#666666" /></svg>
+        <div className="h-screen overflow-hidden bg-red-100" style={{width: (100*(images.length+1)) + "vw"}}>
+            <div className="absolute z-50 top-1/2 ml-4 pt-1.5 text-white hover:text-gray-200" onClick={() => back()}>
+                <svg width="30" height="30"><polygon points="5, 13, 25, 25, 25, 0" fill="currentColor" /></svg>
             </div>
-            <div className="w-10 h-10 rounded-full bg-white absolute z-50 top-1/2 right-0 transform rotate-180 pt-1.5 mr-4" onClick={() => advance()}>
-                <svg width="30" height="30"><polygon points="5, 13, 25, 25, 25, 0" fill="#666666" /></svg>
+            <div className="absolute z-50 top-1/2 right-0 transform rotate-180 pt-1.5 mr-4 text-white hover:text-gray-200" onClick={() => advance()}>
+                <svg width="30" height="30"><polygon points="5, 13, 25, 25, 25, 0" fill="currentColor" /></svg>
             </div>
             <CarouselIndicators position={position} numSlides={images.length}/>
-            <div className={(transition && "ease-in-out transition-transform duration-500 ") + "h-full transform flex flex-row"} style={{width: (100*images.length) + "vw ", transform: 'translate(-' + (100/images.length) * position + '%)'}}>
+            <div className={(transition && "ease-in-out transition-transform duration-200 ") + "h-full transform flex flex-row"} style={{width: (100*images.length) + "vw ", transform: 'translate(-' + (100/images.length) * position + '%)'}}>
                 {images.map(i => <CarouselItem key={i.name} img={i.image} />)}
             </div>
         </div>
