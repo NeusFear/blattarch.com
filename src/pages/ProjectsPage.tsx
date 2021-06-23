@@ -194,8 +194,6 @@ const categories = [ProjectType.All, ProjectType.Commercial, ProjectType.Corpera
   ProjectType.Educational, ProjectType.Recreational, ProjectType.Hospitality, ProjectType.Restaurant, ProjectType.Residential, ProjectType.HealthCare,
   ProjectType.Dental, ProjectType.Community, ProjectType.FaithBased, ProjectType.InTheWorks]
 
-type ProjectType = typeof ProjectType[keyof typeof ProjectType]
-
 const ProjectsPage = () => {
     return (
       <div>
