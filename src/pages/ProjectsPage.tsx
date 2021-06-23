@@ -1,3 +1,7 @@
+import { Fragment, useState } from 'react'
+import { Listbox, Transition } from '@headlessui/react'
+import { CheckIcon, SelectorIcon } from '@heroicons/react/solid'
+
 import fam_entrance from '../images/projects/government/fam/entrance.jpg'
 import fam_hop from '../images/projects/government/fam/hop_interior.jpg'
 import fam_southgallery from '../images/projects/government/fam/south_gallery.jpg'
@@ -136,10 +140,10 @@ import wcn3_gym from '../images/projects/in_the_works/okc_wellness_3/gym.jpg'
 import wcn3_lobby from '../images/projects/in_the_works/okc_wellness_3/lobby.jpg'
 import wcn3_parking from '../images/projects/in_the_works/okc_wellness_3/parking.jpg'
 
-import reaves_park_drone from '../images/projects/in_the_works/okc_wellness_3/entry.jpg'
-import reaves_park_entry from '../images/projects/in_the_works/okc_wellness_3/gym.jpg'
-import reaves_park_night from '../images/projects/in_the_works/okc_wellness_3/lobby.jpg'
-import reaves_park_plaza from '../images/projects/in_the_works/okc_wellness_3/parking.jpg'
+import reaves_park_drone from '../images/projects/in_the_works/reaves_park/drone.jpg'
+import reaves_park_entry from '../images/projects/in_the_works/reaves_park/entry.jpg'
+import reaves_park_night from '../images/projects/in_the_works/reaves_park/night.jpg'
+import reaves_park_plaza from '../images/projects/in_the_works/reaves_park/plaza.jpg'
 
 const projects = [
   {name: "First Americans Museum", desc: "Placeholder description", images: [fam_entrance, fam_hop, fam_southgallery, fam_touch, fam_walk]},
@@ -168,40 +172,124 @@ const projects = [
   {name: "Reaves Park", desc: "Placeholder description", images: [reaves_park_drone, reaves_park_entry, reaves_park_night, reaves_park_plaza]},
 ]
 
+const ProjectType = {
+  All: {id: 0, name: "All", desc: "All our Projects."},
+  Commercial: {id: 1, name: "Commercial", desc: "Large scale projects usually for company use."},
+  Corperate: {id: 2, name: "Corperate", desc: "Projects owned by a corperation."},
+  Government: {id: 3, name: "Government", desc: "Government owned projects."},
+  Institutional: {id: 4, name: "Institutional", desc: "Projects owned by an individual Institution."},
+  Educational: {id: 5, name: "Educational", desc: "School and University projects."},
+  Recreational: {id: 6, name: "Recreational", desc: "Projects for Recreational use."},
+  Hospitality: {id: 7, name: "Hospitality", desc: "Hotels and other places to stay."},
+  Restaurant: {id: 8, name: "Restaurant", desc: "Places to visit for a bite to eat."},
+  Residential: {id: 9, name: "Residentail", desc: "Private homes."},
+  HealthCare: {id: 10, name: "Health Care", desc: "Hospitals and Doctor's offices."},
+  Dental: {id: 11, name: "Dental", desc: "Dental offices, orthodontist offices."},
+  Community: {id: 12, name: "Community", desc: "Community Projects."},
+  FaithBased: {id: 13, name: "Faith Based", desc: "Places of worship."},
+  InTheWorks: {id: 14, name: "In the Works", desc: "Projects not yet under construction."}
+} as const
+
+const categories = [ProjectType.All, ProjectType.Commercial, ProjectType.Corperate, ProjectType.Government, ProjectType.Institutional, 
+  ProjectType.Educational, ProjectType.Recreational, ProjectType.Hospitality, ProjectType.Restaurant, ProjectType.Residential, ProjectType.HealthCare,
+  ProjectType.Dental, ProjectType.Community, ProjectType.FaithBased, ProjectType.InTheWorks]
+
+type ProjectType = typeof ProjectType[keyof typeof ProjectType]
+
 const ProjectsPage = () => {
     return (
       <div>
-        <CategoryList />
+        <FilterBar />
         <ProjectList />
       </div>
     )
 };
 
-const CategoryList = () => {
+const FilterBar = () => {
   return(
-    <div className="flex-wrap flex flex-shrink align-items-center mx-0 xl:mx-60 md:mx-20 mt-16 mb-6">
-      <CategoryCard category="Commercial" desc="Projects owned by larger companies" />
-      <CategoryCard category="Corperate" desc="Projects owned by corperations" />
-      <CategoryCard category="Government" desc="Government Level Projects" />
-      <CategoryCard category="Educatoinal" desc="Projects for schools or Universities" />
-      <CategoryCard category="Recreational" desc="Projects for recreational use" />
-      <CategoryCard category="Hospitality & Restaurant" desc="Places to eat and sleep" />
-      <CategoryCard category="Residential" desc="Private homes" />
-      <CategoryCard category="Healthcare and Dental" desc="Hospitals, clinics, and health care offices." />
-      <CategoryCard category="Community and Faith Based" desc="Churches and other failth based projects." />
-      <CategoryCard category="In the Works" desc="Projects we're working on now." />
+    <div className="flex flex-row border-t border-b border-gray-400 w-full mt-16">
+      <p className="flex items-center text-sm border-r border-gray-400 px-3 bg-gray-100">Filter:</p>
+      <CategoryFilter />
+      <p className="flex items-center text-sm border-r border-gray-400 px-3 bg-gray-100">Sort:</p>
+      <SortFilter />
     </div>
   )
 }
 
-const CategoryCard = ({category, desc}: {category: string, desc: string}) => {
+const CategoryFilter = () => {
+  const [selected, setSelected] = useState(ProjectType.All)
 
-  return(
-    <div className="lg:w-1/4 md:w-1/3 w-1/2 p-2">
-      <div className="bg-gray-100 rounded-md px-4 w-full relative">
-        <p className="px-2 text-lg transform -mb-3 truncate">{category}</p>
-        <p className="text-xs px-2 pt-1 pb-2 text-gray-600 truncate">{desc}</p>
-      </div>
+  return (
+    <div className="w-72 sticky top-16 z-20">
+      <Listbox value={selected} onChange={setSelected}>
+        <div className="relative">
+          <Listbox.Button className="relative w-full py-2 pl-3 pr-10 border-r border-gray-400 text-left bg-white cursor-default focus:outline-none sm:text-sm">
+            <span className="block truncate">{selected.name}</span>
+            <span className="absolute inset-y-0 right-0 flex items-center pr-2 pointer-events-none">
+              <SelectorIcon className="w-5 h-5 text-gray-400" aria-hidden="true" />
+            </span>
+          </Listbox.Button>
+          <Transition as={Fragment} 
+                enter="transition ease-out duration-50" enterFrom="opacity-0" enterTo="opacity-100"
+                leave="transition ease-in duration-100" leaveFrom="opacity-100" leaveTo="opacity-0">
+            <Listbox.Options className="absolute w-full py-1 overflow-auto text-base bg-white max-h-60 border-gray-400 border sm:text-sm">
+              {categories.map((category, categoryIdx) => (
+                <Listbox.Option key={categoryIdx} className={({ active }) => `${active ? 'text-gray-900 bg-gray-100' : 'text-gray-900'} cursor-default select-none relative py-2 pl-10 pr-4 z-20`} value={category}>
+                  {({ selected, active }) => (
+                    <>
+                      <span className={`${selected ? 'font-medium' : 'font-normal'} block truncate`}>{category.name}</span>
+                      {selected &&
+                        <span className={`${active ? 'text-gray-600' : 'text-gray-600'} absolute inset-y-0 left-0 flex items-center pl-3`}>
+                          <CheckIcon className="w-5 h-5" aria-hidden="true" />
+                        </span>}
+                    </>
+                  )}
+                </Listbox.Option>
+              ))}
+            </Listbox.Options>
+          </Transition>
+        </div>
+      </Listbox>
+    </div>
+  )
+}
+
+const sortFilters = ["Favorites", "Newest", "Oldest", "Alphabetical"]
+
+const SortFilter = () => {
+  const [selected, setSelected] = useState(sortFilters[0])
+
+  return (
+    <div className="w-72 sticky top-16 z-20">
+      <Listbox value={selected} onChange={setSelected}>
+        <div className="relative">
+          <Listbox.Button className="relative w-full py-2 pl-3 pr-10 border-r border-gray-400 text-left bg-white cursor-default focus:outline-none sm:text-sm">
+            <span className="block truncate">{selected}</span>
+            <span className="absolute inset-y-0 right-0 flex items-center pr-2 pointer-events-none">
+              <SelectorIcon className="w-5 h-5 text-gray-400" aria-hidden="true" />
+            </span>
+          </Listbox.Button>
+          <Transition as={Fragment} 
+                enter="transition ease-out duration-50" enterFrom="opacity-0" enterTo="opacity-100"
+                leave="transition ease-in duration-100" leaveFrom="opacity-100" leaveTo="opacity-0">
+            <Listbox.Options className="absolute w-full py-1 overflow-auto text-base bg-white max-h-60 border-gray-400 border sm:text-sm">
+              {sortFilters.map((sortBy, categoryIdx) => (
+                <Listbox.Option key={categoryIdx} className={({ active }) => `${active ? 'text-gray-900 bg-gray-100' : 'text-gray-900'} cursor-default select-none relative py-2 pl-10 pr-4 z-20`} value={sortBy}>
+                  {({ selected, active }) => (
+                    <>
+                      <span className={`${selected ? 'font-medium' : 'font-normal'} block truncate`}>{sortBy}</span>
+                      {selected &&
+                        <span className={`${active ? 'text-gray-600' : 'text-gray-600'} absolute inset-y-0 left-0 flex items-center pl-3`}>
+                          <CheckIcon className="w-5 h-5" aria-hidden="true" />
+                        </span>}
+                    </>
+                  )}
+                </Listbox.Option>
+              ))}
+            </Listbox.Options>
+          </Transition>
+        </div>
+      </Listbox>
     </div>
   )
 }

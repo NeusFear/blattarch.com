@@ -65,7 +65,7 @@ export default function App() {
               leaveTo="opacity-0 scale-95"
             >
               {(ref) => (
-                <div className="md:hidden w-full" id="mobile-menu">
+                <div className="md:hidden w-full bg-white z-50" id="mobile-menu">
                   <div ref={ref} className="px-2 pt-2 pb-3 sm:px-3 text-black block w-full">
                     <Link to="/" className="py-2 px-4 no-underline w-full block">Home</Link>
                     <Link to="/projects" className="py-2 px-4 no-underline w-full block">Projects</Link>
