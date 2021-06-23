@@ -6,7 +6,11 @@ module.exports = {
       transitionProperty: {
         'height': 'height',
         'grid-template-rows': 'grid-template-rows'
-      }
+      },
+      height: {
+        'half': '50vh'
+      },
+      filter: ['hover']
     },
     colors: {
       black: colors.black,
