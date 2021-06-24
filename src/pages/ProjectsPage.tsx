@@ -3,6 +3,7 @@ import { Listbox, Transition } from '@headlessui/react'
 import { CheckIcon, SelectorIcon } from '@heroicons/react/solid'
 import Carousel from '../components/Carousel'
 import Footer from '../components/Footer'
+import LazyLoad from 'react-lazy-load';
 
 import fam_entrance from '../images/projects/government/fam/entrance.jpg'
 import fam_hop from '../images/projects/government/fam/hop_interior.jpg'
@@ -194,6 +195,8 @@ const ProjectType = {
 const categories = [ProjectType.All, ProjectType.Commercial, ProjectType.Corperate, ProjectType.Government, ProjectType.Institutional, 
   ProjectType.Educational, ProjectType.Recreational, ProjectType.Hospitality, ProjectType.Restaurant, ProjectType.Residential, ProjectType.HealthCare,
   ProjectType.Dental, ProjectType.Community, ProjectType.FaithBased, ProjectType.InTheWorks]
+  
+const sortFilters = ["Favorites", "Newest", "Oldest", "Alphabetical"]
 
 const ProjectsPage = () => {
     return (
@@ -253,8 +256,6 @@ const CategoryFilter = () => {
     </div>
   )
 }
-
-const sortFilters = ["Favorites", "Newest", "Oldest", "Alphabetical"]
 
 const SortFilter = () => {
   const [selected, setSelected] = useState(sortFilters[0])
@@ -347,16 +348,19 @@ const ProjectCard = ({name, date, desc, images}: {name: string, date: string, de
           </div>
         </div>
       </Transition>
-      <div className="lg:w-1/2 w-full h-half group bg-cover bg-center" 
+
+      <LazyLoad offsetVertical={600} height={500} className="lg:w-1/2 w-full h-half">
+        <div className="w-full h-full group bg-cover bg-center" 
           style={{ backgroundImage: `url(${images[0]})` }}
           onClick={() => setOpen(true)}>
-        <div className="group-hover:opacity-100 bg-opacity-60 transition-opacity ease-in-out opacity-0 w-full h-full z-10 text-black text-center bg-white">
-            <div className="top-1/2 relative mt-8">
-              <p className="pt-1 -mt-8 font-bold">{name}</p>
-              <p className="pb-3 pt-1 text-xs">{date}</p>
-            </div>
+          <div className="group-hover:opacity-100 bg-opacity-60 transition-opacity ease-in-out opacity-0 w-full h-full z-10 text-black text-center bg-white">
+              <div className="top-1/2 relative mt-8">
+                <p className="pt-1 -mt-8 font-bold">{name}</p>
+                <p className="pb-3 pt-1 text-xs">{date}</p>
+              </div>
+          </div>
         </div>
-      </div>
+      </LazyLoad>
     </>
   )
 }
