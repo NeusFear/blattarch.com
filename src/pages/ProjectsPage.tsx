@@ -299,7 +299,7 @@ const ProjectList = () => {
 
   return(
     <div className="flex-wrap flex self-center w-full mt-16">
-      {projects.map(p => <ProjectCard name={p.name} date={p.date} desc={p.desc} images={p.images} />)}
+      {projects.map((p, keyID) => <ProjectCard key={keyID} name={p.name} date={p.date} desc={p.desc} images={p.images} />)}
     </div>
   )
 }
