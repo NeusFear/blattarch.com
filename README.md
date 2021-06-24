@@ -4,6 +4,8 @@ A Website for Blatt Architects
 
 ### Contributing
 
+`yarn install` Downloads and installs the needed files for the development of the site.
+
 `yarn run start` Runs the app in the development mode.
 Open `http://localhost:3000` to view.
 
