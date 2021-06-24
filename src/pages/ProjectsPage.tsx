@@ -205,7 +205,7 @@ const ProjectsPage = () => {
 
 const FilterBar = () => {
   return(
-    <div className="flex flex-row border-t border-b border-gray-400 w-full mt-16">
+    <div className="fixed bg-white flex flex-row border-t border-b border-gray-400 w-full">
       <p className="flex items-center text-sm border-r border-gray-400 px-3 bg-gray-100">Filter:</p>
       <CategoryFilter />
       <p className="flex items-center text-sm border-r border-gray-400 px-3 bg-gray-100">Sort:</p>
@@ -295,7 +295,7 @@ const SortFilter = () => {
 const ProjectList = () => {
 
   return(
-    <div className="flex-wrap flex self-center w-full">
+    <div className="flex-wrap flex self-center w-full mt-16">
       {projects.map(p => <ProjectCard name={p.name} desc={p.desc} images={p.images} />)}
     </div>
   )
@@ -303,15 +303,41 @@ const ProjectList = () => {
 
 const ProjectCard = ({name, desc, images}: {name: string, desc: string, images: any}) => {
 
+  const [open, setOpen] = useState(false);
+
   return(
-    <div className="lg:w-1/2 w-full h-half group bg-cover bg-center" style={{ backgroundImage: `url(${images[0]})` }}>
-      <div className="group-hover:opacity-100 bg-opacity-60 transition-opacity ease-in-out opacity-0 w-full h-full z-10 text-black text-center bg-white">
-          <div className="top-1/2 relative mt-8">
-            <p className="pt-1 -mt-8 font-bold">{name}</p>
-            <p className="pb-3 pt-1 text-xs">{desc}</p>
+    <>
+      <Transition
+          className="fixed w-full left-0 bg-white z-40 mt-9 border-t border-gray-400" style={{height: 'calc(100% - 100px)'}}
+          as="div"
+          show={open}
+          enter="transition-opacity duration-75"
+          enterFrom="opacity-0"
+          enterTo="opacity-100 block"
+          leave="transition-opacity duration-150"
+          leaveFrom="opacity-100"
+          leaveTo="opacity-0 hidden">
+        <div className="w-full bg-white z-40 h-full">
+          <div className="absolute transform bg-gray-100 border-l border-t border-gray-400 h-9 w-9 right-0 p-1 cursor-pointer" 
+                style={{translate: '0px -37px'}}
+                onClick={() => setOpen(false)}>
+            <svg xmlns="http://www.w3.org/2000/svg" className="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+              <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M6 18L18 6M6 6l12 12" />
+            </svg>
           </div>
+        </div>
+      </Transition>
+      <div className="lg:w-1/2 w-full h-half group bg-cover bg-center" 
+          style={{ backgroundImage: `url(${images[0]})` }}
+          onClick={() => setOpen(true)}>
+        <div className="group-hover:opacity-100 bg-opacity-60 transition-opacity ease-in-out opacity-0 w-full h-full z-10 text-black text-center bg-white">
+            <div className="top-1/2 relative mt-8">
+              <p className="pt-1 -mt-8 font-bold">{name}</p>
+              <p className="pb-3 pt-1 text-xs">{desc}</p>
+            </div>
+        </div>
       </div>
-    </div>
+    </>
   )
 }
   
