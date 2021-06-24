@@ -32,7 +32,7 @@ const Carousel = ({images}: {images: any}) => {
     }
 
     return(
-        <div className="h-screen overflow-hidden bg-red-100" style={{width: (100*(images.length+1)) + "vw"}}>
+        <div className="h-full overflow-hidden bg-red-100" style={{width: (100*(images.length+1)) + "%"}}>
             <div className="absolute z-50 top-1/2 ml-4 pt-1.5 text-white hover:text-gray-200" onClick={() => back()}>
                 <svg width="30" height="30"><polygon points="5, 13, 25, 25, 25, 0" fill="currentColor" /></svg>
             </div>
@@ -41,7 +41,7 @@ const Carousel = ({images}: {images: any}) => {
             </div>
             <CarouselIndicators position={position} numSlides={images.length}/>
             <div className={(transition && "ease-in-out transition-transform duration-200 ") + "h-full transform flex flex-row"} style={{width: (100*images.length) + "vw ", transform: 'translate(-' + (100/images.length) * position + '%)'}}>
-                {images.map(i => <CarouselItem key={i.name} img={i.image} />)}
+                {images.map((i, id) => <CarouselItem key={id} img={i} />)}
             </div>
         </div>
     )
@@ -51,7 +51,7 @@ export default Carousel;
 
 export const CarouselItem = ({img}: {img: any}) => {
     return(
-        <div className="flex-grow h-full bg-cover bg-center bg-blue-100" style={{ backgroundImage: `url(${img})`, width: '100vw' }}>
+        <div className="flex-grow h-full bg-cover bg-center bg-blue-100" style={{ backgroundImage: `url(${img})`, width: '100%' }}>
             
         </div>
     )
@@ -65,6 +65,6 @@ const CarouselIndicators = ({position, numSlides}: {position: number, numSlides:
     //}
 
     return(
-        <div className="flex flex-row absolute bottom-10">test</div>
+        <div className="flex flex-row absolute bottom-10">....</div>
     )
 }

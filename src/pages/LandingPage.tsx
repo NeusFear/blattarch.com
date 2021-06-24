@@ -15,25 +15,13 @@ import french_day from '../images/projects/residential/french_residence/day.jpg'
 
 const LandingPage = () => {
 
-  const images = [
-    {name: "fam", image: fam_touch},
-    {name: "umbrellas", image: nbroad_umbrellas},
-    {name: "cbl", image: cbl_offices},
-    {name: "edmondpublicworks", image: edmondpw_front},
-    {name: "famvc", image: famvc_morning},
-    {name: "guymonfd", image: guymon_fd_front},
-    {name: "21c", image: toc_exterior},
-    {name: "uco", image: uco_wantland_exterior},
-    {name: "vcadmin", image: vc_admin_fly},
-    {name: "evoke", image: evoke_exterior},
-    {name: "corbet", image: corbett_cover2},
-    {name: "french", image: french_day}
-  ]
+  const images = [fam_touch, nbroad_umbrellas, cbl_offices, edmondpw_front, famvc_morning, guymon_fd_front, toc_exterior,
+    uco_wantland_exterior, vc_admin_fly, evoke_exterior, corbett_cover2, french_day]
 
   return (
-    <>
+    <div className="h-screen w-full">
       <Carousel images={images} />
-    </>
+    </div>
   );
 };
 

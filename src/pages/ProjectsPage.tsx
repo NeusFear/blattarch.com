@@ -1,6 +1,7 @@
 import { Fragment, useState } from 'react'
 import { Listbox, Transition } from '@headlessui/react'
 import { CheckIcon, SelectorIcon } from '@heroicons/react/solid'
+import Carousel from '../components/ScreenCarousel'
 
 import fam_entrance from '../images/projects/government/fam/entrance.jpg'
 import fam_hop from '../images/projects/government/fam/hop_interior.jpg'
@@ -205,7 +206,7 @@ const ProjectsPage = () => {
 
 const FilterBar = () => {
   return(
-    <div className="fixed bg-white flex flex-row border-t border-b border-gray-400 w-full">
+    <div className="fixed bg-white flex flex-row border-t border-b border-gray-400 w-full z-40">
       <p className="flex items-center text-sm border-r border-gray-400 px-3 bg-gray-100">Filter:</p>
       <CategoryFilter />
       <p className="flex items-center text-sm border-r border-gray-400 px-3 bg-gray-100">Sort:</p>
@@ -318,12 +319,30 @@ const ProjectCard = ({name, desc, images}: {name: string, desc: string, images: 
           leaveFrom="opacity-100"
           leaveTo="opacity-0 hidden">
         <div className="w-full bg-white z-40 h-full">
-          <div className="absolute transform bg-gray-100 border-l border-t border-gray-400 h-9 w-9 right-0 p-1 cursor-pointer" 
+          <div className="absolute transform bg-gray-100 border-l border-t border-gray-400 h-9 w-9 right-0 p-1 cursor-pointer z-50 hover:bg-red-100" 
                 style={{translate: '0px -37px'}}
                 onClick={() => setOpen(false)}>
             <svg xmlns="http://www.w3.org/2000/svg" className="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
               <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M6 18L18 6M6 6l12 12" />
             </svg>
+          </div>
+          <div className="w-full h-full grid grid-cols-1 place-items-center">
+            <div className="w-full h-3/4 top-0 absolute lg:h-full">
+              <Carousel images={images} />
+            </div>
+            <div className="bg-white lg:bg-opacity-80 h-1/4 absolute w-full bottom-0 flex items-baseline border-t border-gray-400">
+              <p className="flex-shrink lg:flex-grow"></p>
+              <div className="w-full lg:w-3/4 lg:flex-row flex-col flex px-2">
+                <div className="lg:m-4 flex-shrink flex flex-row lg:flex-col">
+                  <p className="font-semibold mx-1">{name}</p>
+                  <p className="mx-1">date</p>
+                </div>
+                <p className="lg:m-4 mx-1 text-sm md:text-md" style={{columnCount: 3}}>
+                  {desc}
+                </p>
+              </div>
+              <p className="flex-shrink lg:flex-grow"></p>
+            </div>
           </div>
         </div>
       </Transition>
