@@ -10,7 +10,6 @@ import fam_southgallery from '../images/projects/government/fam/south_gallery.jp
 import fam_touch from '../images/projects/government/fam/touch.jpg'
 import fam_walk from '../images/projects/government/fam/walk.jpg'
 
-import nbroad_front from '../images/projects/commercial/1007nbroadway/front.jpg'
 import nbroad_chairs from '../images/projects/commercial/1007nbroadway/roof_chairs.jpg'
 import nbroad_garden from '../images/projects/commercial/1007nbroadway/roof_garden.jpg'
 import nbroad_umbrellas from '../images/projects/commercial/1007nbroadway/roof_umbrellas.jpg'
@@ -149,7 +148,7 @@ import reaves_park_plaza from '../images/projects/in_the_works/reaves_park/plaza
 
 const projects = [
   {name: "First Americans Museum", date: "0000", desc: "Placeholder description", images: [fam_entrance, fam_hop, fam_southgallery, fam_touch, fam_walk]},
-  {name: "1007 N Broadway", date: "0000", desc: "placeholder description", images: [nbroad_umbrellas, nbroad_chairs, nbroad_garden, nbroad_top, nbroad_front]},
+  {name: "1007 N Broadway", date: "0000", desc: "placeholder description", images: [nbroad_umbrellas, nbroad_chairs, nbroad_garden, nbroad_top]},
   {name: "1015 N Broadway", date: "0000", desc: "Placeholder description", images: [tennbroad_lobby, tennbroad_board, tennbroad_lounge, tennbroad_studio, tennbroad_conference, tennbroad_bikes]},
   {name: "Citizens Bank Lobby", date: "0000", desc: "Placeholder description", images: [cbl_wide, cbl_curve, cbl_ceiling, cbl_entrance, cbl_chairs, cbl_offices, cbl_studio]},
   {name: "Perimiter Tech", date: "0000", desc: "Placeholder description", images: [pt_night, pt_southwest, pt_hall, pt_window, pt_door, pt_board]},
@@ -330,7 +329,7 @@ const ProjectCard = ({name, date, desc, images}: {name: string, date: string, de
           </div>
           <div className="w-full h-full grid grid-cols-1 place-items-center">
             <div className="w-full h-3/4 top-0 absolute lg:h-full">
-              <Carousel images={images} />
+              <Carousel images={images} autoAdvance={false} />
             </div>
             <div className="bg-white lg:bg-opacity-80 h-1/4 absolute w-full bottom-0 flex items-baseline border-t border-gray-400">
               <p className="flex-shrink lg:flex-grow"></p>

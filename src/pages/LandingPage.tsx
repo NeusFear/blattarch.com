@@ -22,7 +22,7 @@ const LandingPage = () => {
   return (
     <div>
       <div className="h-screen w-full">
-        <Carousel images={images} />
+        <Carousel images={images} autoAdvance={true} />
       </div>
       <Footer />
     </div>

@@ -1,7 +1,7 @@
 import { useEffect } from "react";
 import { useState } from "react"
 
-const Carousel = ({images}: {images: any}) => {
+const Carousel = ({images, autoAdvance}: {images: any, autoAdvance: boolean}) => {
 
     const [position, setPosition] = useState(0);
     const [transition, setTransition] = useState(true);
@@ -22,6 +22,13 @@ const Carousel = ({images}: {images: any}) => {
     useEffect(() => {
         setPosition(0);
     }, [transition])
+
+    useEffect(() => {
+        const timer = setTimeout(() => {
+            autoAdvance && advance();
+        }, 5000);
+        return () => clearTimeout(timer)
+    })
 
     function advance() {
         setPosition(position + 1)
