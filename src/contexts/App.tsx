@@ -9,7 +9,7 @@ import AboutPage from '../pages/AboutPage'
 import PressPage from '../pages/PressPage'
 import ContactPage from '../pages/ContactPage'
 import LandingPage from '../pages/LandingPage'
-import React, { useState } from "react";
+import { useState } from "react";
 import { Transition } from "@headlessui/react";
 
 export default function App() {
