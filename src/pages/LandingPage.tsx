@@ -1,4 +1,5 @@
-import Carousel from '../components/ScreenCarousel'
+import Carousel from '../components/Carousel'
+import Footer from '../components/Footer'
 
 import fam_touch from '../images/projects/government/fam/touch.jpg'
 import nbroad_umbrellas from '../images/projects/commercial/1007nbroadway/roof_umbrellas.jpg'
@@ -19,8 +20,11 @@ const LandingPage = () => {
     uco_wantland_exterior, vc_admin_fly, evoke_exterior, corbett_cover2, french_day]
 
   return (
-    <div className="h-screen w-full">
-      <Carousel images={images} />
+    <div>
+      <div className="h-screen w-full">
+        <Carousel images={images} />
+      </div>
+      <Footer />
     </div>
   );
 };

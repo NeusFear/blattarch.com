@@ -1,7 +1,8 @@
 import { Fragment, useState } from 'react'
 import { Listbox, Transition } from '@headlessui/react'
 import { CheckIcon, SelectorIcon } from '@heroicons/react/solid'
-import Carousel from '../components/ScreenCarousel'
+import Carousel from '../components/Carousel'
+import Footer from '../components/Footer'
 
 import fam_entrance from '../images/projects/government/fam/entrance.jpg'
 import fam_hop from '../images/projects/government/fam/hop_interior.jpg'
@@ -147,30 +148,30 @@ import reaves_park_night from '../images/projects/in_the_works/reaves_park/night
 import reaves_park_plaza from '../images/projects/in_the_works/reaves_park/plaza.jpg'
 
 const projects = [
-  {name: "First Americans Museum", desc: "Placeholder description", images: [fam_entrance, fam_hop, fam_southgallery, fam_touch, fam_walk]},
-  {name: "1007 N Broadway", desc: "placeholder description", images: [nbroad_umbrellas, nbroad_chairs, nbroad_garden, nbroad_top, nbroad_front]},
-  {name: "1015 N Broadway", desc: "Placeholder description", images: [tennbroad_lobby, tennbroad_board, tennbroad_lounge, tennbroad_studio, tennbroad_conference, tennbroad_bikes]},
-  {name: "Citizens Bank Lobby", desc: "Placeholder description", images: [cbl_wide, cbl_curve, cbl_ceiling, cbl_entrance, cbl_chairs, cbl_offices, cbl_studio]},
-  {name: "Perimiter Tech", desc: "Placeholder description", images: [pt_night, pt_southwest, pt_hall, pt_window, pt_door, pt_board]},
-  {name: "Edmond Public Works", desc: "Placeholder description", images: [edmondpw_wide, edmondpw_break, edmondpw_area, edmondpw_front, edmondpw_interior, edmondpw_south]},
-  {name: "First Americans Museum Visitor Center", desc: "Placeholder description", images: [famvc_swing, famvc_whole, famvc_ceiling, famvc_corner, famvc_morning, famvc_night]},
-  {name: "Guymon Fire Department", desc: "Placeholder description", images: [guymon_fd_front, guymon_fd_doors_open, guymon_fd_sign, guymon_fd_doors]},
-  {name: "21c Museum Hotel", desc: "Placeholder description", images: [toc_exterior, toc_ballroom, toc_kitchen, toc_lobby, toc_woozie, toc_desk, toc_guestroom, toc_lightwell, toc_living, toc_suite, toc_bench]},
-  {name: "UCO Wantland Stadium", desc: "Placeholder description", images: [uco_wantland_exterior, uco_wantland_east, uco_wantland_covered]},
-  {name: "Monroe Elementary", desc: "Placeholder description", images: [monroe_elementary_front, monroe_elementary_northwest, monroe_elementary_bench]},
-  {name: "First United Methodist", desc: "Placeholder description", images: [firstum_day, firstum_night]},
-  {name: "Variety Care Admin", desc: "Placeholder description", images: [vc_admin_entry, vc_admin_fly, vc_admin_night, vc_admin_morning, vc_admin_reception, vc_admin_rear]},
-  {name: "Saratoga Farms", desc: "Placeholder description", images: [saratoga_right, saratoga_close, saratoga_barn, saratoga_far, saratoga_walkway, saratoga_garage]},
-  {name: "Autumn Ridge", desc: "Placeholder description", images: [autumn_ridge_front, autumn_ridge_pool, autumn_ridge_back, autumn_ridge_close]},
-  {name: "Taylor Dental Clinic", desc: "Placeholder description", images: [taylor_dental_ext, taylor_dental_left, taylor_dental_cover]},
-  {name: "Edmond Center Court", desc: "Placeholder description", images: [edmond_cc_angled, edmond_cc_front, edmond_cc_interior, edmond_cc_mez, edmond_cc_walkway]},
-  {name: "Lazy \"E\" Arena", desc: "Placeholder description", images: [lazye_aerial, lazye_rendering, lazye_interior, lazye_cantina]},
-  {name: "Evoke", desc: "Placeholder description", images: [evoke_exterior, evoke_bar, evoke_interior, evoke_interior2]},
-  {name: "Riviere Bahn Mi", desc: "Placeholder description", images: [rbm_interior, rbm_interior2, rbm_interior3]},
-  {name: "Corbett Residence", desc: "Placeholder description", images: [corbett_back, corbett_cover2, corbett_lake, corbett_wide, corbett_cover]},
-  {name: "French Residence", desc: "Placeholder description", images: [french_drive, french_warm, french_back, french_day, french_exterior, french_walk]},
-  {name: "OKC Wellness Center #3", desc: "Placeholder description", images: [wcn3_entry, wcn3_drive, wcn3_gym, wcn3_lobby, wcn3_parking]},
-  {name: "Reaves Park", desc: "Placeholder description", images: [reaves_park_drone, reaves_park_entry, reaves_park_night, reaves_park_plaza]},
+  {name: "First Americans Museum", date: "0000", desc: "Placeholder description", images: [fam_entrance, fam_hop, fam_southgallery, fam_touch, fam_walk]},
+  {name: "1007 N Broadway", date: "0000", desc: "placeholder description", images: [nbroad_umbrellas, nbroad_chairs, nbroad_garden, nbroad_top, nbroad_front]},
+  {name: "1015 N Broadway", date: "0000", desc: "Placeholder description", images: [tennbroad_lobby, tennbroad_board, tennbroad_lounge, tennbroad_studio, tennbroad_conference, tennbroad_bikes]},
+  {name: "Citizens Bank Lobby", date: "0000", desc: "Placeholder description", images: [cbl_wide, cbl_curve, cbl_ceiling, cbl_entrance, cbl_chairs, cbl_offices, cbl_studio]},
+  {name: "Perimiter Tech", date: "0000", desc: "Placeholder description", images: [pt_night, pt_southwest, pt_hall, pt_window, pt_door, pt_board]},
+  {name: "Edmond Public Works", date: "0000", desc: "Placeholder description", images: [edmondpw_wide, edmondpw_break, edmondpw_area, edmondpw_front, edmondpw_interior, edmondpw_south]},
+  {name: "First Americans Museum Visitor Center", date: "0000", desc: "Placeholder description", images: [famvc_swing, famvc_whole, famvc_ceiling, famvc_corner, famvc_morning, famvc_night]},
+  {name: "Guymon Fire Department", date: "0000", desc: "Placeholder description", images: [guymon_fd_front, guymon_fd_doors_open, guymon_fd_sign, guymon_fd_doors]},
+  {name: "21c Museum Hotel", date: "0000", desc: "Placeholder description", images: [toc_exterior, toc_ballroom, toc_kitchen, toc_lobby, toc_woozie, toc_desk, toc_guestroom, toc_lightwell, toc_living, toc_suite, toc_bench]},
+  {name: "UCO Wantland Stadium", date: "0000", desc: "Placeholder description", images: [uco_wantland_exterior, uco_wantland_east, uco_wantland_covered]},
+  {name: "Monroe Elementary", date: "0000", desc: "Placeholder description", images: [monroe_elementary_front, monroe_elementary_northwest, monroe_elementary_bench]},
+  {name: "First United Methodist", date: "0000", desc: "Placeholder description", images: [firstum_day, firstum_night]},
+  {name: "Variety Care Admin", date: "0000", desc: "Placeholder description", images: [vc_admin_entry, vc_admin_fly, vc_admin_night, vc_admin_morning, vc_admin_reception, vc_admin_rear]},
+  {name: "Saratoga Farms", date: "0000", desc: "Placeholder description", images: [saratoga_right, saratoga_close, saratoga_barn, saratoga_far, saratoga_walkway, saratoga_garage]},
+  {name: "Autumn Ridge", date: "0000", desc: "Placeholder description", images: [autumn_ridge_front, autumn_ridge_pool, autumn_ridge_back, autumn_ridge_close]},
+  {name: "Taylor Dental Clinic", date: "0000", desc: "Placeholder description", images: [taylor_dental_ext, taylor_dental_left, taylor_dental_cover]},
+  {name: "Edmond Center Court", date: "0000", desc: "Placeholder description", images: [edmond_cc_angled, edmond_cc_front, edmond_cc_interior, edmond_cc_mez, edmond_cc_walkway]},
+  {name: "Lazy \"E\" Arena", date: "0000", desc: "Placeholder description", images: [lazye_aerial, lazye_rendering, lazye_interior, lazye_cantina]},
+  {name: "Evoke", date: "0000", desc: "Placeholder description", images: [evoke_exterior, evoke_bar, evoke_interior, evoke_interior2]},
+  {name: "Riviere Bahn Mi", date: "0000", desc: "Placeholder description", images: [rbm_interior, rbm_interior2, rbm_interior3]},
+  {name: "Corbett Residence", date: "0000", desc: "Placeholder description", images: [corbett_back, corbett_cover2, corbett_lake, corbett_wide, corbett_cover]},
+  {name: "French Residence", date: "0000", desc: "Placeholder description", images: [french_drive, french_warm, french_back, french_day, french_exterior, french_walk]},
+  {name: "OKC Wellness Center #3", date: "0000", desc: "Placeholder description", images: [wcn3_entry, wcn3_drive, wcn3_gym, wcn3_lobby, wcn3_parking]},
+  {name: "Reaves Park", date: "0000", desc: "Placeholder description", images: [reaves_park_drone, reaves_park_entry, reaves_park_night, reaves_park_plaza]},
 ]
 
 const ProjectType = {
@@ -200,6 +201,7 @@ const ProjectsPage = () => {
       <div>
         <FilterBar />
         <ProjectList />
+        <Footer />
       </div>
     )
 };
@@ -297,12 +299,12 @@ const ProjectList = () => {
 
   return(
     <div className="flex-wrap flex self-center w-full mt-16">
-      {projects.map(p => <ProjectCard name={p.name} desc={p.desc} images={p.images} />)}
+      {projects.map(p => <ProjectCard name={p.name} date={p.date} desc={p.desc} images={p.images} />)}
     </div>
   )
 }
 
-const ProjectCard = ({name, desc, images}: {name: string, desc: string, images: any}) => {
+const ProjectCard = ({name, date, desc, images}: {name: string, date: string, desc: string, images: any}) => {
 
   const [open, setOpen] = useState(false);
 
@@ -335,9 +337,9 @@ const ProjectCard = ({name, desc, images}: {name: string, desc: string, images: 
               <div className="w-full lg:w-3/4 lg:flex-row flex-col flex px-2">
                 <div className="lg:m-4 flex-shrink flex flex-row lg:flex-col">
                   <p className="font-semibold mx-1">{name}</p>
-                  <p className="mx-1">date</p>
+                  <p className="mx-1">{date}</p>
                 </div>
-                <p className="lg:m-4 mx-1 text-sm md:text-md" style={{columnCount: 3}}>
+                <p className="lg:m-4 mx-1 text-sm md:text-md">
                   {desc}
                 </p>
               </div>
@@ -352,7 +354,7 @@ const ProjectCard = ({name, desc, images}: {name: string, desc: string, images: 
         <div className="group-hover:opacity-100 bg-opacity-60 transition-opacity ease-in-out opacity-0 w-full h-full z-10 text-black text-center bg-white">
             <div className="top-1/2 relative mt-8">
               <p className="pt-1 -mt-8 font-bold">{name}</p>
-              <p className="pb-3 pt-1 text-xs">{desc}</p>
+              <p className="pb-3 pt-1 text-xs">{date}</p>
             </div>
         </div>
       </div>
