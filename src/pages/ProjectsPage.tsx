@@ -308,7 +308,7 @@ const ProjectList = ({filter}, {filter: any}) => {
 
   return(
     <div className="flex-wrap flex self-center w-full mt-16">
-      {projects.map((p, keyID) => (p.category == filter || filter == ProjectType.All) && <ProjectCard key={keyID} name={p.name} date={p.date} desc={p.desc} images={p.images} />)}
+      {projects.map((p, keyID) => (p.category === filter || filter === ProjectType.All) && <ProjectCard key={keyID} name={p.name} date={p.date} desc={p.desc} images={p.images} />)}
     </div>
   )
 }
