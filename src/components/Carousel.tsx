@@ -39,7 +39,7 @@ const Carousel = ({images, autoAdvance}: {images: any, autoAdvance: boolean}) =>
     }
 
     return(
-        <div className="h-full overflow-hidden bg-red-100" style={{width: (100*(images.length+1)) + "%"}}>
+        <div className="h-full overflow-hidden" style={{width: (100*(images.length+1)) + "%"}}>
             <div className="absolute z-50 top-1/2 ml-4 pt-1.5 text-white hover:text-gray-200" onClick={() => back()}>
                 <svg width="30" height="30"><polygon points="5, 13, 25, 25, 25, 0" fill="currentColor" /></svg>
             </div>
@@ -58,9 +58,7 @@ export default Carousel;
 
 export const CarouselItem = ({img}: {img: any}) => {
     return(
-        <div className="flex-grow h-full bg-cover bg-center bg-blue-100" style={{ backgroundImage: `url(${img})`, width: '100%' }}>
-            
-        </div>
+        <div className="flex-grow h-full bg-cover bg-center" style={{ backgroundImage: `url(${img})`, width: '100%' }}></div>
     )
 }
 

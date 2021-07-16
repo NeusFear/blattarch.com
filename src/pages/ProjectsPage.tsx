@@ -147,33 +147,6 @@ import reaves_park_entry from '../images/projects/in_the_works/reaves_park/entry
 import reaves_park_night from '../images/projects/in_the_works/reaves_park/night.jpg'
 import reaves_park_plaza from '../images/projects/in_the_works/reaves_park/plaza.jpg'
 
-const projects = [
-  {name: "First Americans Museum", date: "0000", desc: "Placeholder description", images: [fam_entrance, fam_hop, fam_southgallery, fam_touch, fam_walk]},
-  {name: "1007 N Broadway", date: "0000", desc: "placeholder description", images: [nbroad_umbrellas, nbroad_chairs, nbroad_garden, nbroad_top]},
-  {name: "1015 N Broadway", date: "0000", desc: "Placeholder description", images: [tennbroad_lobby, tennbroad_board, tennbroad_lounge, tennbroad_studio, tennbroad_conference, tennbroad_bikes]},
-  {name: "Citizens Bank Lobby", date: "0000", desc: "Placeholder description", images: [cbl_wide, cbl_curve, cbl_ceiling, cbl_entrance, cbl_chairs, cbl_offices, cbl_studio]},
-  {name: "Perimiter Tech", date: "0000", desc: "Placeholder description", images: [pt_night, pt_southwest, pt_hall, pt_window, pt_door, pt_board]},
-  {name: "Edmond Public Works", date: "0000", desc: "Placeholder description", images: [edmondpw_wide, edmondpw_break, edmondpw_area, edmondpw_front, edmondpw_interior, edmondpw_south]},
-  {name: "First Americans Museum Visitor Center", date: "0000", desc: "Placeholder description", images: [famvc_swing, famvc_whole, famvc_ceiling, famvc_corner, famvc_morning, famvc_night]},
-  {name: "Guymon Fire Department", date: "0000", desc: "Placeholder description", images: [guymon_fd_front, guymon_fd_doors_open, guymon_fd_sign, guymon_fd_doors]},
-  {name: "21c Museum Hotel", date: "0000", desc: "Placeholder description", images: [toc_exterior, toc_ballroom, toc_kitchen, toc_lobby, toc_woozie, toc_desk, toc_guestroom, toc_lightwell, toc_living, toc_suite, toc_bench]},
-  {name: "UCO Wantland Stadium", date: "0000", desc: "Placeholder description", images: [uco_wantland_exterior, uco_wantland_east, uco_wantland_covered]},
-  {name: "Monroe Elementary", date: "0000", desc: "Placeholder description", images: [monroe_elementary_front, monroe_elementary_northwest, monroe_elementary_bench]},
-  {name: "First United Methodist", date: "0000", desc: "Placeholder description", images: [firstum_day, firstum_night]},
-  {name: "Variety Care Admin", date: "0000", desc: "Placeholder description", images: [vc_admin_entry, vc_admin_fly, vc_admin_night, vc_admin_morning, vc_admin_reception, vc_admin_rear]},
-  {name: "Saratoga Farms", date: "0000", desc: "Placeholder description", images: [saratoga_right, saratoga_close, saratoga_barn, saratoga_far, saratoga_walkway, saratoga_garage]},
-  {name: "Autumn Ridge", date: "0000", desc: "Placeholder description", images: [autumn_ridge_front, autumn_ridge_pool, autumn_ridge_back, autumn_ridge_close]},
-  {name: "Taylor Dental Clinic", date: "0000", desc: "Placeholder description", images: [taylor_dental_ext, taylor_dental_left, taylor_dental_cover]},
-  {name: "Edmond Center Court", date: "0000", desc: "Placeholder description", images: [edmond_cc_angled, edmond_cc_front, edmond_cc_interior, edmond_cc_mez, edmond_cc_walkway]},
-  {name: "Lazy \"E\" Arena", date: "0000", desc: "Placeholder description", images: [lazye_aerial, lazye_rendering, lazye_interior, lazye_cantina]},
-  {name: "Evoke", date: "0000", desc: "Placeholder description", images: [evoke_exterior, evoke_bar, evoke_interior, evoke_interior2]},
-  {name: "Riviere Bahn Mi", date: "0000", desc: "Placeholder description", images: [rbm_interior, rbm_interior2, rbm_interior3]},
-  {name: "Corbett Residence", date: "0000", desc: "Placeholder description", images: [corbett_back, corbett_cover2, corbett_lake, corbett_wide, corbett_cover]},
-  {name: "French Residence", date: "0000", desc: "Placeholder description", images: [french_drive, french_warm, french_back, french_day, french_exterior, french_walk]},
-  {name: "OKC Wellness Center #3", date: "0000", desc: "Placeholder description", images: [wcn3_entry, wcn3_drive, wcn3_gym, wcn3_lobby, wcn3_parking]},
-  {name: "Reaves Park", date: "0000", desc: "Placeholder description", images: [reaves_park_drone, reaves_park_entry, reaves_park_night, reaves_park_plaza]},
-]
-
 const ProjectType = {
   All: {id: 0, name: "All", desc: "All our Projects."},
   Commercial: {id: 1, name: "Commercial", desc: "Large scale projects usually for company use."},
@@ -195,36 +168,72 @@ const ProjectType = {
 const categories = [ProjectType.All, ProjectType.Commercial, ProjectType.Corperate, ProjectType.Government, ProjectType.Institutional, 
   ProjectType.Educational, ProjectType.Recreational, ProjectType.Hospitality, ProjectType.Restaurant, ProjectType.Residential, ProjectType.HealthCare,
   ProjectType.Dental, ProjectType.Community, ProjectType.FaithBased, ProjectType.InTheWorks]
+
+const projects = [
+  {name: "First Americans Museum", category: ProjectType.Government, date: "0000", desc: "Placeholder description", images: [fam_entrance, fam_hop, fam_southgallery, fam_touch, fam_walk]},
+  {name: "1007 N Broadway", category: ProjectType.Commercial, date: "0000", desc: "placeholder description", images: [nbroad_umbrellas, nbroad_chairs, nbroad_garden, nbroad_top]},
+  {name: "1015 N Broadway", category: ProjectType.Commercial, date: "0000", desc: "Placeholder description", images: [tennbroad_lobby, tennbroad_board, tennbroad_lounge, tennbroad_studio, tennbroad_conference, tennbroad_bikes]},
+  {name: "Citizens Bank Lobby", category: ProjectType.Commercial, date: "0000", desc: "Placeholder description", images: [cbl_wide, cbl_curve, cbl_ceiling, cbl_entrance, cbl_chairs, cbl_offices, cbl_studio]},
+  {name: "Perimiter Tech", category: ProjectType.Corperate, date: "0000", desc: "Placeholder description", images: [pt_night, pt_southwest, pt_hall, pt_window, pt_door, pt_board]},
+  {name: "Edmond Public Works", category: ProjectType.Government, date: "0000", desc: "Placeholder description", images: [edmondpw_wide, edmondpw_break, edmondpw_area, edmondpw_front, edmondpw_interior, edmondpw_south]},
+  {name: "First Americans Museum Visitor Center", category: ProjectType.Government, date: "0000", desc: "Placeholder description", images: [famvc_swing, famvc_whole, famvc_ceiling, famvc_corner, famvc_morning, famvc_night]},
+  {name: "Guymon Fire Department", category: ProjectType.Government, date: "0000", desc: "Placeholder description", images: [guymon_fd_front, guymon_fd_doors_open, guymon_fd_sign, guymon_fd_doors]},
+  {name: "21c Museum Hotel", category: ProjectType.Hospitality, date: "0000", desc: "Placeholder description", images: [toc_exterior, toc_ballroom, toc_kitchen, toc_lobby, toc_woozie, toc_desk, toc_guestroom, toc_lightwell, toc_living, toc_suite, toc_bench]},
+  {name: "UCO Wantland Stadium", category: ProjectType.Educational, date: "0000", desc: "Placeholder description", images: [uco_wantland_exterior, uco_wantland_east, uco_wantland_covered]},
+  {name: "Monroe Elementary", category: ProjectType.Educational, date: "0000", desc: "Placeholder description", images: [monroe_elementary_front, monroe_elementary_northwest, monroe_elementary_bench]},
+  {name: "First United Methodist", category: ProjectType.FaithBased, date: "0000", desc: "Placeholder description", images: [firstum_day, firstum_night]},
+  {name: "Variety Care Admin", category: ProjectType.HealthCare, date: "0000", desc: "Placeholder description", images: [vc_admin_entry, vc_admin_fly, vc_admin_night, vc_admin_morning, vc_admin_reception, vc_admin_rear]},
+  {name: "Saratoga Farms", category: ProjectType.FaithBased, date: "0000", desc: "Placeholder description", images: [saratoga_right, saratoga_close, saratoga_barn, saratoga_far, saratoga_walkway, saratoga_garage]},
+  {name: "Autumn Ridge", category: ProjectType.FaithBased, date: "0000", desc: "Placeholder description", images: [autumn_ridge_front, autumn_ridge_pool, autumn_ridge_back, autumn_ridge_close]},
+  {name: "Taylor Dental Clinic", category: ProjectType.Dental, date: "0000", desc: "Placeholder description", images: [taylor_dental_ext, taylor_dental_left, taylor_dental_cover]},
+  {name: "Edmond Center Court", category: ProjectType.Recreational, date: "0000", desc: "Placeholder description", images: [edmond_cc_angled, edmond_cc_front, edmond_cc_interior, edmond_cc_mez, edmond_cc_walkway]},
+  {name: "Lazy \"E\" Arena", category: ProjectType.Recreational, date: "0000", desc: "Placeholder description", images: [lazye_aerial, lazye_rendering, lazye_interior, lazye_cantina]},
+  {name: "Evoke", category: ProjectType.Restaurant, date: "0000", desc: "Placeholder description", images: [evoke_exterior, evoke_bar, evoke_interior, evoke_interior2]},
+  {name: "Riviere Bahn Mi", category: ProjectType.Restaurant, date: "0000", desc: "Placeholder description", images: [rbm_interior, rbm_interior2, rbm_interior3]},
+  {name: "Corbett Residence", category: ProjectType.Residential, date: "0000", desc: "Placeholder description", images: [corbett_back, corbett_cover2, corbett_lake, corbett_wide, corbett_cover]},
+  {name: "French Residence", category: ProjectType.Residential, date: "0000", desc: "Placeholder description", images: [french_drive, french_warm, french_back, french_day, french_exterior, french_walk]},
+  {name: "OKC Wellness Center #3", category: ProjectType.Recreational, date: "0000", desc: "Placeholder description", images: [wcn3_entry, wcn3_drive, wcn3_gym, wcn3_lobby, wcn3_parking]},
+  {name: "Reaves Park", category: ProjectType.Recreational, date: "0000", desc: "Placeholder description", images: [reaves_park_drone, reaves_park_entry, reaves_park_night, reaves_park_plaza]},
+]
   
 const sortFilters = ["Favorites", "Newest", "Oldest", "Alphabetical"]
 
 const ProjectsPage = () => {
+
+  const [typeFilter, setTypeFilter] = useState(ProjectType.All);
+
     return (
       <div>
-        <FilterBar />
-        <ProjectList />
+        <FilterBar setType={setTypeFilter} />
+        <ProjectList filter={typeFilter} />
         <Footer />
       </div>
     )
 };
 
-const FilterBar = () => {
+const FilterBar = ({setType}, {setType: any}) => {
   return(
     <div className="fixed bg-white flex flex-row border-t border-b border-gray-400 w-full z-40">
       <p className="flex items-center text-sm border-r border-gray-400 px-3 bg-gray-100">Filter:</p>
-      <CategoryFilter />
+      <CategoryFilter setType={setType} />
       <p className="flex items-center text-sm border-r border-gray-400 px-3 bg-gray-100">Sort:</p>
       <SortFilter />
     </div>
   )
 }
 
-const CategoryFilter = () => {
+const CategoryFilter = ({setType}, {setType: any}) => {
+
+  function setSelectedWrap(selected) {
+    setType(selected);
+    setSelected(selected);
+  }
+
   const [selected, setSelected] = useState(ProjectType.All)
 
   return (
     <div className="w-72 sticky top-16 z-20">
-      <Listbox value={selected} onChange={setSelected}>
+      <Listbox value={selected} onChange={setSelectedWrap}>
         <div className="relative">
           <Listbox.Button className="relative w-full py-2 pl-3 pr-10 border-r border-gray-400 text-left bg-white cursor-default focus:outline-none sm:text-sm">
             <span className="block truncate">{selected.name}</span>
@@ -295,11 +304,11 @@ const SortFilter = () => {
   )
 }
 
-const ProjectList = () => {
+const ProjectList = ({filter}, {filter: any}) => {
 
   return(
     <div className="flex-wrap flex self-center w-full mt-16">
-      {projects.map((p, keyID) => <ProjectCard key={keyID} name={p.name} date={p.date} desc={p.desc} images={p.images} />)}
+      {projects.map((p, keyID) => (p.category == filter || filter == ProjectType.All) && <ProjectCard key={keyID} name={p.name} date={p.date} desc={p.desc} images={p.images} />)}
     </div>
   )
 }
