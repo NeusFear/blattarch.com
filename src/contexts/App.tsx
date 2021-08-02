@@ -6,11 +6,13 @@ import {
 } from "react-router-dom";
 import ProjectsPage from '../pages/ProjectsPage'
 import AboutPage from '../pages/AboutPage'
+import TeamPage from '../pages/TeamPage'
 import PressPage from '../pages/PressPage'
 import ContactPage from '../pages/ContactPage'
 import LandingPage from '../pages/LandingPage'
 import { useState } from "react";
 import { Transition } from "@headlessui/react";
+import { SvgLogoOutline } from "../images/brand/Icons";
 
 export default function App() {
 
@@ -25,13 +27,14 @@ export default function App() {
               <div className="flex items-center justify-between h-16">
                 <div className="flex items-center">
                   <div className="flex-shrink-0 text-gray-800">
-                    [ logo ]
+                    <Link to="/" className="flex flex-row"><SvgLogoOutline className="w-10 h-10" /></Link>
                   </div>
                   <div className="hidden md:block">
                     <div className="ml-10 flex space-x-2 text-gray-700 hover:text-black w-full text-center">
                         <Link to="/" className="hover:bg-white py-2 px-4 no-underline hover:bg-opacity-40 transition-all duration-100">Home</Link>
                         <Link to="/projects" className="hover:bg-white py-2 px-4 no-underline hover:bg-opacity-40 transition-all duration-100">Projects</Link>
                         <Link to="/about" className="hover:bg-white py-2 px-4 no-underline hover:bg-opacity-40 transition-all duration-100">About</Link>
+                        <Link to="/team" className="hover:bg-white py-2 px-4 no-underline hover:bg-opacity-40 transition-all duration-100">Team</Link>
                         <Link to="/press" className="hover:bg-white py-2 px-4 no-underline hover:bg-opacity-40 transition-all duration-100">Press</Link>
                         <Link to="/contact" className="hover:bg-white py-2 px-4 no-underline hover:bg-opacity-40 transition-all duration-100">Contact</Link>
                     </div>
@@ -70,6 +73,7 @@ export default function App() {
                     <Link to="/" className="py-2 px-4 no-underline w-full block">Home</Link>
                     <Link to="/projects" className="py-2 px-4 no-underline w-full block">Projects</Link>
                     <Link to="/about" className="py-2 px-4 no-underline w-full block">About</Link>
+                    <Link to="/team" className="py-2 px-4 no-underline w-full block">Team</Link>
                     <Link to="/press" className="py-2 px-4 no-underline w-full block">Press</Link>
                     <Link to="/contact" className="py-2 px-4 no-underline w-full block">Contact</Link>
                   </div>
@@ -85,6 +89,9 @@ export default function App() {
           </Route>
           <Route path="/about">
             <AboutPage />
+          </Route>
+          <Route path="/team">
+            <TeamPage />
           </Route>
           <Route path="/press">
             <PressPage />

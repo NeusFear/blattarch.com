@@ -52,7 +52,11 @@ module.exports = {
       ]
     }
   },
-  variants: {},
+  variants: {
+    extend: {
+      grayscale: ['hover'],
+    }
+  },
   darkMode: 'class', // or 'media' or 'class'
   purge: [
     './src/**/*.html',

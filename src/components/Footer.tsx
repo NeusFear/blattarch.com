@@ -13,7 +13,8 @@ const Footer = () => {
                 </div>
                 <div className="flex-grow border-r border-gray-400 p-2">
                     <h3 className="font-bold">Contact</h3>
-                    <p>405.340.8552</p>
+                    <p>405.340.8552 phone</p>
+                    <p>405.340.5707 fax</p>
                 </div>
                 <div className="flex-grow border-r border-gray-400 p-2">
                     <h3 className="font-bold">Sitemap</h3>
