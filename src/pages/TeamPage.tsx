@@ -1,5 +1,6 @@
 import { useState } from 'react'
 import ReactCardFlip from 'react-card-flip'
+
 import brandon_serious from '../images/staff/brandon_serious.jpg'
 import brandon_silly from '../images/staff/brandon_silly.jpg'
 
