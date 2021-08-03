@@ -9985,6 +9985,11 @@ react-app-polyfill@^2.0.0:
     regenerator-runtime "^0.13.7"
     whatwg-fetch "^3.4.1"
 
+react-card-flip@^1.1.1:
+  version "1.1.1"
+  resolved "https://registry.yarnpkg.com/react-card-flip/-/react-card-flip-1.1.1.tgz#4df665d706e58032c9059a99814f29e99dd964a7"
+  integrity sha512-viH05bvFl3jfy75ibZhvubq6VV4Sla2GuN0hGFMuqLRIkM6qW21WswoFC7qhntY0+PMFqu0WSY5mBKneR0HL3Q==
+
 react-contextmenu@^2.14.0:
   version "2.14.0"
   resolved "https://registry.yarnpkg.com/react-contextmenu/-/react-contextmenu-2.14.0.tgz#d8966f30614b9b780b928be4c8d92bd740d55cdd"
