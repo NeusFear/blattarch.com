@@ -1,5 +1,6 @@
 import { useState } from 'react'
 import ReactCardFlip from 'react-card-flip'
+import Footer from '../components/Footer'
 
 import brandon_serious from '../images/staff/brandon_serious.jpg'
 import brandon_silly from '../images/staff/brandon_silly.jpg'
@@ -50,6 +51,7 @@ const TeamPage = () => {
       <>
         <br/><br/>
         <TeamCards />
+        <Footer />
       </>
     );
   };
