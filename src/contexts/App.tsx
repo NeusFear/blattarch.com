@@ -22,7 +22,7 @@ export default function App() {
     <Router>
       <div className="overflow-hidden">
         <div>
-          <nav className="bg-white fixed w-full z-50">
+          <nav className="bg-white fixed w-full z-50 border-b border-gray-400">
             <div className="mx-auto px-4 sm:px-6 lg:px-8">
               <div className="flex items-center justify-between h-16">
                 <div className="flex items-center">

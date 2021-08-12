@@ -213,7 +213,7 @@ const ProjectsPage = () => {
 
 const FilterBar = ({setType}, {setType: any}) => {
   return(
-    <div className="fixed bg-white flex flex-row border-t border-b border-gray-400 w-full z-40">
+    <div className="fixed bg-white flex flex-row border-b border-gray-400 w-full z-40">
       <p className="flex items-center text-sm border-r border-gray-400 px-3 bg-gray-100">Filter:</p>
       <CategoryFilter setType={setType} />
       <p className="flex items-center text-sm border-r border-gray-400 px-3 bg-gray-100">Sort:</p>
