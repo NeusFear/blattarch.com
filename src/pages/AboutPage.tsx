@@ -1,5 +1,6 @@
 import fam_entrance from '../images/projects/government/fam/entrance.jpg'
 import nbroad_umbrellas from '../images/projects/commercial/1007nbroadway/roof_umbrellas.jpg'
+import Footer from '../components/Footer'
 
 const AboutPage = () => {
     return (
@@ -42,6 +43,7 @@ const AboutPage = () => {
       " 
           image={fam_entrance}
           flipped={false} />
+          <Footer />
       </div>
     );
   };
