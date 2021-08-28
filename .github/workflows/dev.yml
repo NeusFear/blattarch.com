@@ -21,7 +21,7 @@ jobs:
       with:
         local-dir: build
         ftp-server: ftp://72.167.125.79/public_html
-        ftp-username: ubuntu
+        ftp-username: i3z6zteowp5y
         ftp-password: ${{ secrets.WEBSITE_FTP_PASSWORD }}
         known-hosts: ${{ secrets.WEBSITE_KNOWN_HOSTS }}
         args: --all
