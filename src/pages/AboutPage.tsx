@@ -7,17 +7,17 @@ const AboutPage = () => {
       <div className="w-full mt-16">
         <AboutSection 
           title="Firm History" 
-          text="After resigning as a partner at Loftis Bell Downing and Partners in 1981, David Hornbeek practiced as a sole practitioner for two years. In 1983-89 Hornbeek became a partner of Blair Hornbeek Architects; from 1989-96, he was principal of Blair Hornbeek Larsson Architects; from 1996-98, he was principal of Hornbeek Larsson Hinchey Architects; in 1998 he began his professional relationship with his current business partner, Tony Blatt and from 1998-2002, David and Tony were principals in Hornbeek Larsson Blatt Architects; and from 2002 to the present they have been partners/principals in Hornbeek Blatt Architects." 
+          text="Celebrating 20+ years, Blatt Architects, previously Hornbeek Blatt Architects, is a professional architectural firm headquartered in Edmond, Oklahoma.  Blatt Architects has developed long-term client partnerships across the State of Oklahoma through their collaborative approach and focus on sustainable, timeless solutions for all to enjoy.  Providing professional services for a wide range of projects that include cultural centers, corporate, hospitality, educational, government, medical and residential, our work is site-specific, detail-oriented and client-centric.  Blatt Architects has been designing award winning architecture for over twenty years and was named the 2011 AIA Central Oklahoma "Outstanding Firm of the Year."  Blatt Architects has achieved this distinction through leadership, vision, and a commitment to quality design." 
           image={fam_entrance}
           flipped={false} />
         <AboutSection
           title="Firm Philosophy" 
-          text="Hornbeek Blatt Architects is a multi-faceted Architectural Firm that specializes in providing high quality designs tailored to the time, budget, and sustainability needs of each individual project.  HB offers a wide range of complementary professional services to the benefit of each Client and respective project.  The core business of our Firm is based in the field of Architectural Design, but is balanced by services that support the Design initiative. " 
+          text="Blatt Architects is a multi-faceted Architectural Firm that specializes in providing high quality designs tailored to the time, budget, and sustainability needs of each individual project.  Blatt Architects offers a wide range of complementary professional services to the benefit of each Client and respective project.  The core business of our Firm is based in the field of Architectural Design, but is balanced by services that support the Design initiative. " 
           image={nbroad_umbrellas}
           flipped={true} />
         <AboutSection 
           title="Quality Commitments" 
-          text="Hornbeek Blatt Architects is proud to provide for our clients high quality buildings that are tailored to the specific requirements for time, budget and energy efficiency. Our team understands that Time, Budget, Quality and Efficiency are elements that must be carefully balanced in order to create a successful project.  We also recognize that the correct approach might require additional effort on the part of the Design Team.  Hornbeek Blatt Architects is willing to provide the extra effort required to develop the proper scheme that each and every Owner deserves. " 
+          text="Blatt Architects is proud to provide for our clients high quality buildings that are tailored to the specific requirements for time, budget and energy efficiency. Our team understands that Time, Budget, Quality and Efficiency are elements that must be carefully balanced in order to create a successful project.  We also recognize that the correct approach might require additional effort on the part of the Design Team.  Blatt Architects is willing to provide the extra effort required to develop the proper scheme that each and every Owner deserves. " 
           image={fam_entrance}
           flipped={false} />
         <AboutSection
@@ -29,7 +29,7 @@ const AboutPage = () => {
         <AboutSection 
           title="Services" 
           text="
-          Hornbeek Blatt has a firmly established reputation for design excellence, built on our partners’ multifarious expertise and enhanced by our incorporation of innovative technologies. Our firm’s principals are licensed architects with a combined fifty years of experience in this field. 
+          Blatt has a firmly established reputation for design excellence, built on our partners’ multifarious expertise and enhanced by our incorporation of innovative technologies. Our firm’s principals are licensed architects with a combined fifty years of experience in this field. 
           Specializations provided by the Firm for this project include, but are not limited to: 
           <br />
           <nl />•  Program Analysis and Programming
