@@ -6,12 +6,12 @@ import brandon_serious from '../images/staff/brandon_serious.jpg'
 import brandon_silly from '../images/staff/brandon_silly.jpg'
 
 const teamMembers = [
-  {name: "Anthony Blatt", nickname: "Tony", serious: brandon_serious, silly: brandon_silly},
-  {name: "Julie Blatt", nickname: "Julie", serious: brandon_serious, silly: brandon_silly},
-  {name: "James Maggio", nickname: "Jim", serious: brandon_serious, silly: brandon_silly},
-  {name: "Carlie Gruel", nickname: "Carlie", serious: brandon_serious, silly: brandon_silly},
-  {name: "Veronica Secculini", nickname: "Veronica", serious: brandon_serious, silly: brandon_silly},
-  {name: "Brandon Davis", nickname: "Brandon", serious: brandon_serious, silly: brandon_silly}
+  {name: "Anthony Blatt", nickname: "Tony", email: "ablatt@blattarch.com", cellphone: "405.833.7441", titles: "Principal Architect <br /> NCARB, AIA", serious: brandon_serious, silly: brandon_silly},
+  {name: "Julie Blatt", nickname: "Julie", email: "jblatt@blattarch.com", cellphone: "405.642.9892", titles: "Project Manager", serious: brandon_serious, silly: brandon_silly},
+  {name: "James Maggio", nickname: "Jim", email: "PLACEHOLDER", cellphone: "405.xxx.xxxx", titles: "Project Architect", serious: brandon_serious, silly: brandon_silly},
+  {name: "Carlie Gruel", nickname: "Carlie", email: "PLACEHOLDER", cellphone: "405.xxx.xxxx", titles: "Project Architect", serious: brandon_serious, silly: brandon_silly},
+  {name: "Veronica Secculini", nickname: "Veronica", email: "PLACEHOLDER", cellphone: "405.xxx.xxxx", titles: "Intern Architect", serious: brandon_serious, silly: brandon_silly},
+  {name: "Brandon Davis", nickname: "Brandon", email: "intern@blattarch.com", cellphone: "405.496.8884", titles: "Student Intern Architect", serious: brandon_serious, silly: brandon_silly}
 ]
 
 const TeamCard = ({person}, {person: any}) => {
@@ -28,10 +28,20 @@ const TeamCard = ({person}, {person: any}) => {
           onMouseOver={() => setHover(true)}
           onClick={() => setSlected(!selected)}>
         </div>
-        <div className="text-center w-full h-half pt-8" onClick={() => setSlected(!selected)}>
+        <div className="text-center w-full h-half pt-8 bg-gray-100 flex flex-col" onClick={() => setSlected(!selected)}>
+          <div className="flex-grow"></div>
           <p className="text-6xl font-bold">{person.nickname.toUpperCase()}</p>
-          <p>{person.name}</p>
-          <p className="px-14 py-4 text-justify">At vero eos et accusamus et iusto odio dignissimos ducimus qui blanditiis praesentium voluptatum deleniti atque corrupti quos dolores et quas molestias excepturi sint occaecati cupiditate non provident, similique sunt in culpa qui officia deserunt mollitia animi, id est laborum et dolorum fuga. Et harum quidem rerum facilis est et expedita distinctio.</p>
+          <p className="text-xl">{person.name}</p>
+          <div className="px-14 py-4 text-center mb-2">{person.titles.split("<br />").map((element, id) => (<div className="mx-8" key={id}>{
+            <p>{element}</p>
+          }</div>))}</div>
+          <p className="text-center">101 S BROADWAY SUITE 200</p>
+          <p className="text-center mb-1">EDMOND OKLAHOMA 73034</p>
+          <p className="text-center">405.340.8552 o</p>
+          <p className="text-center">405.340.5707 f</p>
+          <p className="text-center mb-1">{person.cellphone} c</p>
+          <p className="text-center">{person.email}</p>
+          <div className="flex-grow"></div>
         </div>
       </ReactCardFlip>
     </div>
