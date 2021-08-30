@@ -12,7 +12,7 @@ import ContactPage from '../pages/ContactPage'
 import LandingPage from '../pages/LandingPage'
 import { useState } from "react";
 import { Transition } from "@headlessui/react";
-import { SvgLogoOutline } from "../images/brand/Icons";
+import { SvgLogo } from "../images/brand/Icons";
 
 export default function App() {
 
@@ -27,7 +27,7 @@ export default function App() {
               <div className="flex items-center justify-between h-16">
                 <div className="flex items-center">
                   <div className="flex-shrink-0 text-gray-800">
-                    <Link to="/" className="flex flex-row"><SvgLogoOutline className="w-10 h-10" /></Link>
+                    <Link to="/" className="flex flex-row"><SvgLogo className="w-10 h-10" /></Link>
                   </div>
                   <div className="hidden md:block">
                     <div className="ml-10 flex space-x-2 text-gray-700 hover:text-black w-full text-center">
