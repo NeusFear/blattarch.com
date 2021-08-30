@@ -20,7 +20,7 @@ jobs:
       uses: SamKirkland/FTP-Deploy-Action@3.1.1
       with:
         local-dir: build
-        ftp-server: ftp://ftp.blattarch.com/public_html
+        ftp-server: ftp://blattarch.com/public_html
         ftp-username: i3z6zteowp5y
         ftp-password: ${{ secrets.WEBSITE_FTP_PASSWORD }}
         known-hosts: ${{ secrets.WEBSITE_KNOWN_HOSTS }}
