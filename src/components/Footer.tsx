@@ -31,7 +31,7 @@ const Footer = () => {
                 </div>
             </div>
             <div className="border-t border-gray-400 flex flex-row text-sm">
-                <p className="border-r border-gray-400 px-8 py-4">"Blatt Architects" was renamed in 2021 from it's previous name "Hornbeek Blatt Architects" when David Hornbeek Retired as a partner and Anthony Blatt aquired sole ownership of the company.</p>
+                <p className="border-r border-gray-400 px-8 py-4">"Blatt Architects" was renamed in 2021 from it's previous name "Hornbeek Blatt Architects" when Anthony Blatt aquired sole ownership of the company.</p>
                 <p className="mx-8 py-4">We are a multi-faceted Architecture firm who has had their feet in many types of projects. Feel free to call and ask any questions if you have a project you'd like our help bringing to life.</p>
             </div>
         </div>
