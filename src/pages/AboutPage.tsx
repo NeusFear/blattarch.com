@@ -50,14 +50,14 @@ const AboutPage = () => {
 
 const AboutSection = ({title, text, image, flipped}: {title: String, text: String, image: any, flipped: boolean}) => {
   return(
-    <div className={(flipped ? "lg:flex-row-reverse" : "flex-row") + " lg:flex w-full lg:h-half max-h-screen"}>
+    <div className={(flipped ? "lg:flex-row-reverse" : "flex-row") + " lg:flex w-full h-auto lg:h-half"}>
       <div className="w-full lg:w-1/2 h-half lg:h-full bg-cover" style={{ backgroundImage: `url(${image})` }}></div>
-      <div className="w-full lg:w-1/2 lg:h-full flex flex-col">
+      <div className="w-full lg:w-1/2 flex flex-col">
         <span className="flex-grow"></span>
-        <p className=" text-2xl text-center m-2">{title}</p>
-        {text.split("<br />").map((element, id) => (<p className="mx-8 my-4" key={id}>{
-          element.split("<nl />").map((line, id) => (<p className="mx-8" key={id}>{line}</p>))
-        }</p>))}
+          <p className=" text-2xl text-center m-2">{title}</p>
+          {text.split("<br />").map((element, id) => (<div className="mx-8 my-4" key={id}>{
+            element.split("<nl />").map((line, id) => (<p className="mx-8" key={id}>{line}</p>))
+          }</div>))}
         <span className="flex-grow"></span>
       </div>
     </div>
