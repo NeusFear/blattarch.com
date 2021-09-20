@@ -87,13 +87,6 @@ import vc_admin_rear from '../images/projects/health_care/varietycare_admin/morn
 import vc_admin_night from '../images/projects/health_care/varietycare_admin/night.jpg'
 import vc_admin_reception from '../images/projects/health_care/varietycare_admin/reception.jpg'
 
-import saratoga_barn from '../images/projects/community/saratoga_farms/barn_stalls.jpg'
-import saratoga_close from '../images/projects/community/saratoga_farms/close.jpg'
-import saratoga_far from '../images/projects/community/saratoga_farms/far.jpg'
-import saratoga_garage from '../images/projects/community/saratoga_farms/garage.jpg'
-import saratoga_right from '../images/projects/community/saratoga_farms/right.jpg'
-import saratoga_walkway from '../images/projects/community/saratoga_farms/walkway.jpg'
-
 import autumn_ridge_back from '../images/projects/community/autumn_ridge/back.jpg'
 import autumn_ridge_front from '../images/projects/community/autumn_ridge/front.jpg'
 import autumn_ridge_close from '../images/projects/community/autumn_ridge/front_close.jpg'
@@ -108,11 +101,6 @@ import edmond_cc_front from '../images/projects/recreational/edmond_centercourt/
 import edmond_cc_interior from '../images/projects/recreational/edmond_centercourt/interior.jpg'
 import edmond_cc_mez from '../images/projects/recreational/edmond_centercourt/mez.jpg'
 import edmond_cc_walkway from '../images/projects/recreational/edmond_centercourt/walkway.jpg'
-
-import lazye_aerial from '../images/projects/recreational/lazy_e_arena/aerial.jpg'
-import lazye_rendering from '../images/projects/recreational/lazy_e_arena/rendering.jpg'
-import lazye_interior from '../images/projects/recreational/lazy_e_arena/interior.jpg'
-import lazye_cantina from '../images/projects/recreational/lazy_e_arena/rendering.jpg'
 
 import evoke_bar from '../images/projects/restaurant/evoke/bar.jpg'
 import evoke_exterior from '../images/projects/restaurant/evoke/exterior.jpg'
@@ -170,7 +158,7 @@ const categories = [ProjectType.All, ProjectType.Commercial, ProjectType.Corpera
   ProjectType.Dental, ProjectType.Community, ProjectType.FaithBased, ProjectType.InTheWorks]
 
 const projects = [
-  {name: "First Americans Museum", category: ProjectType.Government, date: "0000", desc: "Placeholder description", images: [fam_entrance, fam_hop, fam_southgallery, fam_touch, fam_walk]},
+  {name: "First Americans Museum", category: ProjectType.Government, date: "2021", desc: "Placeholder description", images: [fam_entrance, fam_hop, fam_southgallery, fam_touch, fam_walk]},
   {name: "1007 N Broadway", category: ProjectType.Commercial, date: "0000", desc: "placeholder description", images: [nbroad_umbrellas, nbroad_chairs, nbroad_garden, nbroad_top]},
   {name: "1015 N Broadway", category: ProjectType.Commercial, date: "0000", desc: "Placeholder description", images: [tennbroad_lobby, tennbroad_board, tennbroad_lounge, tennbroad_studio, tennbroad_conference, tennbroad_bikes]},
   {name: "Citizens Bank Lobby", category: ProjectType.Commercial, date: "0000", desc: "Placeholder description", images: [cbl_wide, cbl_curve, cbl_ceiling, cbl_entrance, cbl_chairs, cbl_offices, cbl_studio]},
@@ -183,15 +171,13 @@ const projects = [
   {name: "Monroe Elementary", category: ProjectType.Educational, date: "0000", desc: "Placeholder description", images: [monroe_elementary_front, monroe_elementary_northwest, monroe_elementary_bench]},
   {name: "First United Methodist", category: ProjectType.FaithBased, date: "0000", desc: "Placeholder description", images: [firstum_day, firstum_night]},
   {name: "Variety Care Admin", category: ProjectType.HealthCare, date: "0000", desc: "Placeholder description", images: [vc_admin_entry, vc_admin_fly, vc_admin_night, vc_admin_morning, vc_admin_reception, vc_admin_rear]},
-  {name: "Saratoga Farms", category: ProjectType.FaithBased, date: "0000", desc: "Placeholder description", images: [saratoga_right, saratoga_close, saratoga_barn, saratoga_far, saratoga_walkway, saratoga_garage]},
   {name: "Autumn Ridge", category: ProjectType.FaithBased, date: "0000", desc: "Placeholder description", images: [autumn_ridge_front, autumn_ridge_pool, autumn_ridge_back, autumn_ridge_close]},
   {name: "Taylor Dental Clinic", category: ProjectType.Dental, date: "0000", desc: "Placeholder description", images: [taylor_dental_ext, taylor_dental_left, taylor_dental_cover]},
   {name: "Edmond Center Court", category: ProjectType.Recreational, date: "0000", desc: "Placeholder description", images: [edmond_cc_angled, edmond_cc_front, edmond_cc_interior, edmond_cc_mez, edmond_cc_walkway]},
-  {name: "Lazy \"E\" Arena", category: ProjectType.Recreational, date: "0000", desc: "Placeholder description", images: [lazye_aerial, lazye_rendering, lazye_interior, lazye_cantina]},
   {name: "Evoke", category: ProjectType.Restaurant, date: "0000", desc: "Placeholder description", images: [evoke_exterior, evoke_bar, evoke_interior, evoke_interior2]},
   {name: "Riviere Bahn Mi", category: ProjectType.Restaurant, date: "0000", desc: "Placeholder description", images: [rbm_interior, rbm_interior2, rbm_interior3]},
-  {name: "Corbett Residence", category: ProjectType.Residential, date: "0000", desc: "Placeholder description", images: [corbett_back, corbett_cover2, corbett_lake, corbett_wide, corbett_cover]},
-  {name: "French Residence", category: ProjectType.Residential, date: "0000", desc: "Placeholder description", images: [french_drive, french_warm, french_back, french_day, french_exterior, french_walk]},
+  {name: "Private Residence", category: ProjectType.Residential, date: "0000", desc: "Placeholder description", images: [corbett_back, corbett_cover2, corbett_lake, corbett_wide, corbett_cover]},
+  {name: "Private Residence", category: ProjectType.Residential, date: "0000", desc: "Placeholder description", images: [french_drive, french_warm, french_back, french_day, french_exterior, french_walk]},
   {name: "OKC Wellness Center #3", category: ProjectType.Recreational, date: "0000", desc: "Placeholder description", images: [wcn3_entry, wcn3_drive, wcn3_gym, wcn3_lobby, wcn3_parking]},
   {name: "Reaves Park", category: ProjectType.Recreational, date: "0000", desc: "Placeholder description", images: [reaves_park_drone, reaves_park_entry, reaves_park_night, reaves_park_plaza]},
 ]
