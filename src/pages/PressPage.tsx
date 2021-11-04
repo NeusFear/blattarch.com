@@ -10,7 +10,7 @@ const pressItems = [
 const PressPage = () => {
     return (
       <div>
-        <div className="flex flex-col h-screen mt-16 xl:px-56 lg:px-36 px-4">
+        <div className="flex flex-col min-h-screen mt-16 xl:px-56 lg:px-36 px-4 mb-8">
           <BlattArchAnnoucement />
           <div className="w-full h-1 border-t border-gray-400 mb-8 mt-14"></div>
           {pressItems.map((item, itemIdx) => <PressItem key={itemIdx} publisher={item.publisher} projectName={item.projectName} author={item.author} date={item.date} previewText={item.previewText} link={item.link} />)}
