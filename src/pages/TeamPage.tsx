@@ -1,56 +1,53 @@
-import { useState } from 'react'
-import ReactCardFlip from 'react-card-flip'
-import Footer from '../components/Footer'
-
-import brandon_serious from '../images/staff/brandon_serious.jpg'
-import brandon_silly from '../images/staff/brandon_silly.jpg'
+import LazyLoad from 'react-lazy-load';
+import Footer from '../components/Footer';
+import billie from '../images/staff/billie.jpg';
+import brandon from '../images/staff/brandon.jpg';
+import carlie from '../images/staff/carlie.jpg';
+import jim from '../images/staff/jim.jpg';
+import julie from '../images/staff/julie.jpg';
+import rainey from '../images/staff/rainey.jpg';
+import tony from '../images/staff/tony.jpg';
+import veronica from '../images/staff/veronica.jpg';
+import yara from '../images/staff/yara.jpg';
 
 const teamMembers = [
-  {name: "Anthony Blatt", nickname: "Tony", email: "ablatt@blattarch.com", cellphone: "405.833.7441", titles: "Principal Architect <br /> NCARB, AIA", serious: brandon_serious, silly: brandon_silly},
-  {name: "Julie Blatt", nickname: "Julie", email: "jblatt@blattarch.com", cellphone: "405.642.9892", titles: "Project Manager", serious: brandon_serious, silly: brandon_silly},
-  {name: "James Maggio", nickname: "Jim", email: "PLACEHOLDER", cellphone: "405.xxx.xxxx", titles: "Project Architect", serious: brandon_serious, silly: brandon_silly},
-  {name: "Carlie Gruel", nickname: "Carlie", email: "PLACEHOLDER", cellphone: "405.xxx.xxxx", titles: "Project Architect", serious: brandon_serious, silly: brandon_silly},
-  {name: "Veronica Secculini", nickname: "Veronica", email: "PLACEHOLDER", cellphone: "405.xxx.xxxx", titles: "Intern Architect", serious: brandon_serious, silly: brandon_silly},
-  {name: "Brandon Davis", nickname: "Brandon", email: "intern@blattarch.com", cellphone: "405.496.8884", titles: "Student Intern Architect", serious: brandon_serious, silly: brandon_silly}
+  { name: "Anthony Blatt", nickname: "Tony", email: "ablatt@blattarch.com", title: "Principal", image: tony},
+  { name: "Julie Blatt", nickname: "Julie", email: "jblatt@blattarch.com", title: "Project Manager", image: julie},
+  { name: "James Maggio", nickname: "Jim", email: "jmaggio@blattarch.com", title: "Project Architect", image: jim},
+  { name: "Carlie Gruel", nickname: "Carlie", email: "cgruel@blattarch.com", title: "Project Architect", image: carlie},
+  { name: "Veronica Secculini", nickname: "Veronica", email: "vseculini@blatarch.com", title: "Intern Architect", image: veronica },
+  { name: "Yara Albotros", nickname: "Yara", email: "EMAIL HERE", title: "Intern Architect", image: yara },
+  { name: "Rainey High", nickname: "Rainey", email: "EMAIL HERE", title: "Intern Architect", image: rainey },
+  { name: "Billie Baker", nickname: "Billie", email: "billie@blattarch.com", title: "Financial Officer", image: billie},
+  { name: "Brandon Davis", nickname: "Brandon", email: "intern@blattarch.com", title: "Student Intern Architect", image: brandon},
+  { name: "Chloe Sweet", nickname: "Chloe", email: "csweet@blattarch.com", title: "Receptionist / Intern", image: undefined}
 ]
 
 const TeamCard = ({person}, {person: any}) => {
 
-  const [hover, setHover] = useState(false);
-  const [selected, setSlected] = useState(false);
-
-  return(
-    <div className="lg:w-1/3 md:w-1/2 w-full h-half">
-      <ReactCardFlip isFlipped={selected}>
-        <div className="bg-cover filter group grayscale hover:grayscale-0 w-full h-half" 
-          style={{backgroundImage: `url(${hover ? person.silly : person.serious})`, backgroundPosition: 'center'}}
-          onMouseLeave={() => setHover(false)}
-          onMouseOver={() => setHover(true)}
-          onClick={() => setSlected(!selected)}>
+  return (
+    <div className="relative inline-block lg:w-1/3 md:w-1/2 w-full">
+      <div style={{marginTop: "100%"}}></div>
+      <LazyLoad offsetVertical={600} className="absolute top-0 bottom-0 left-0 right-0">
+        <div className="w-full h-full group bg-cover bg-center" 
+          style={{ backgroundImage: `url(${person.image})` }}>
+          <div className="group-hover:opacity-100 bg-opacity-60 transition-opacity ease-in-out opacity-0 w-full h-full z-10 text-black text-center bg-white">
+              <div className="top-1/3 relative pt-8">
+                <p className="pt-1 font-bold text-4xl">{person.nickname}</p>
+                <p className="pb-1 pt-1 text-xs">{person.name}</p>
+                <p className="pb-1 pt-1 text-xs">{person.email}</p>
+                <p className="pb-1 pt-1 text-xs">{person.title}</p>
+              </div>
+          </div>
         </div>
-        <div className="text-center w-full h-half pt-8 bg-gray-100 flex flex-col" onClick={() => setSlected(!selected)}>
-          <div className="flex-grow"></div>
-          <p className="text-6xl font-bold">{person.nickname.toUpperCase()}</p>
-          <p className="text-xl">{person.name}</p>
-          <div className="px-14 py-4 text-center mb-2">{person.titles.split("<br />").map((element, id) => (<div className="mx-8" key={id}>{
-            <p>{element}</p>
-          }</div>))}</div>
-          <p className="text-center">101 S BROADWAY SUITE 200</p>
-          <p className="text-center mb-1">EDMOND OKLAHOMA 73034</p>
-          <p className="text-center">405.340.8552 o</p>
-          <p className="text-center">405.340.5707 f</p>
-          <p className="text-center mb-1">{person.cellphone} c</p>
-          <p className="text-center">{person.email}</p>
-          <div className="flex-grow"></div>
-        </div>
-      </ReactCardFlip>
+      </LazyLoad>
     </div>
   )
 }
 
 const TeamCards = () => {
   return(
-    <div className="flex-wrap flex self-center w-screen min-h-screen">
+    <div className="flex-wrap flex self-center w-screen min-h-screen mt-3">
       {teamMembers.map((d, dIdx) => <TeamCard key={dIdx} person={d} />)}
     </div>
   )
