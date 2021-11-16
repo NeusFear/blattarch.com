@@ -20,3 +20,6 @@ npm-debug.log*
 
 # devfiles
 src/stylesheets/index.css
+
+/next/
+./next/
