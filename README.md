@@ -1,15 +1,11 @@
-# blattarch.com
+This is a [Next.js](https://nextjs.org/) project bootstrapped with [`create-next-app`](https://github.com/vercel/next.js/tree/canary/packages/create-next-app).
 
-A Website for Blatt Architects
+## Getting Started
 
-### Contributing
+First, run the development server:
 
-`yarn install` Downloads and installs the needed files for the development of the site.
+```bash
+yarn dev
+```
 
-`yarn run start` Runs the app in the development mode.
-Open `http://localhost:3000` to view.
-
-`yarn run build` Builds the React app for production to the `build` folder. 
-This is optimized for production with minified css
-
-`yarn run inline` Use `Gulp` to inline all the JavaScript and CSS files from the production build into a single minified file.
+Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.

@@ -1,10 +1,12 @@
-import fam_entrance from '../images/projects/government/fam/entrance.jpg'
-import nbroad_umbrellas from '../images/projects/commercial/1007nbroadway/roof_umbrellas.jpg'
-import Footer from '../components/Footer'
+const fam_entrance = '/images/projects/government/fam/entrance.jpg'
+const nbroad_umbrellas = '/images/projects/commercial/1007nbroadway/roof_umbrellas.jpg'
+import Footer from '../components/Footer';
+import Navbar from '../components/Navbar';
 
 const AboutPage = () => {
-    return (
-      <div className="w-full mt-16">
+  return (
+    <div className="w-full">
+      <Navbar />
         <AboutSection 
           title="Firm History" 
           text="Celebrating 20+ years, Blatt Architects, previously Hornbeek Blatt Architects, is a professional architectural firm headquartered in Edmond, Oklahoma.  Blatt Architects has developed long-term client partnerships across the State of Oklahoma through their collaborative approach and focus on sustainable, timeless solutions for all to enjoy.  Providing professional services for a wide range of projects that include cultural centers, corporate, hospitality, educational, government, medical and residential, our work is site-specific, detail-oriented and client-centric.  Blatt Architects has been designing award winning architecture for over twenty years and was named the 2011 AIA Central Oklahoma &quot;Outstanding Firm of the Year.&quot; Blatt Architects has achieved this distinction through leadership, vision, and a commitment to quality design." 
@@ -51,7 +53,7 @@ const AboutPage = () => {
 const AboutSection = ({title, text, image, flipped}: {title: String, text: String, image: any, flipped: boolean}) => {
   return(
     <div className={(flipped ? "lg:flex-row-reverse" : "flex-row") + " lg:flex w-full h-auto lg:h-half"}>
-      <div className="w-full lg:w-1/2 h-half lg:h-full bg-cover" style={{ backgroundImage: `url(${image})` }}></div>
+      <div className="w-full lg:w-1/2 h-[50vh] lg:min-h-[50vh] bg-cover" style={{ backgroundImage: `url("${image}")` }}></div>
       <div className="w-full lg:w-1/2 flex flex-col">
         <span className="flex-grow"></span>
           <p className=" text-2xl text-center m-2">{title}</p>
