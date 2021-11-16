@@ -1,6 +1,6 @@
 import { Key, useEffect, useState } from "react";
 
-const Carousel = ({images, autoAdvance}: {images: any, autoAdvance: boolean}) => {
+const Carousel = ({images, autoAdvance}: {images: string[], autoAdvance: boolean}) => {
 
     const [position, setPosition] = useState(0);
     const [transition, setTransition] = useState(true);
@@ -47,7 +47,7 @@ const Carousel = ({images, autoAdvance}: {images: any, autoAdvance: boolean}) =>
                     <svg width="30" height="30"><polygon points="5, 13, 25, 25, 25, 0" fill="currentColor" /></svg>
                 </div>
                 <div className={(transition && "ease-in-out transition-transform duration-200 ") + "h-full transform flex flex-row"} style={{width: (100*images.length) + "vw ", transform: 'translate(-' + (100/images.length) * position + '%)'}}>
-                    {images.map((img: any, id: Key) => <CarouselItem key={id} img={img} />)}
+                    {images.map((img: string, id: Key) => <CarouselItem key={id} img={img} />)}
                 </div>
             </div>
             <CarouselIndicators position={position} numSlides={images.length}/>
@@ -57,7 +57,7 @@ const Carousel = ({images, autoAdvance}: {images: any, autoAdvance: boolean}) =>
 
 export default Carousel;
 
-export const CarouselItem = ({img}: {img: any}) => {
+export const CarouselItem = ({img}: {img: string}) => {
     return(
         <div className="flex-grow h-full bg-cover bg-center" style={{ backgroundImage: `url("${img}")`, width: '100%' }}></div>
     )
