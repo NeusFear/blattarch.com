@@ -8,6 +8,8 @@ const tony = '/images/staff/tony.jpg';
 const veronica = '/images/staff/veronica.jpg';
 const yara = '/images/staff/yara.jpg';
 
+export type TeamMember = { name: string, nickname: string, email: string, title: string, image: string };
+
 export const teamMembers = [
   { name: "Anthony Blatt", nickname: "Tony", email: "ablatt@blattarch.com", title: "Principal", image: tony},
   { name: "Julie Blatt", nickname: "Julie", email: "jblatt@blattarch.com", title: "Sr. Project Manager", image: julie},

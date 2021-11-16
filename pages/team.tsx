@@ -1,8 +1,8 @@
 import Footer from '../components/Footer';
 import Navbar from '../components/Navbar';
-import { teamMembers } from '../data/TeamData';
+import { TeamMember, teamMembers } from '../data/TeamData';
 
-const TeamCard = ({person}, {person: any}) => {
+const TeamCard = ({person}: {person: TeamMember}) => {
 
   return (
     <div className="relative inline-block lg:w-1/3 md:w-1/2 w-full">

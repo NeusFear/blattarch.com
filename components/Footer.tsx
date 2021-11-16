@@ -1,3 +1,5 @@
+import Link from 'next/link';
+
 const Footer = () => {
     return(
         <div>
@@ -18,11 +20,12 @@ const Footer = () => {
                 </div>
                 <div className="flex-grow border-r border-gray-400 p-2">
                     <h3 className="font-bold">Sitemap</h3>
-                    <a href="/" className="no-underline hover:underline block">Home</a>
-                    <a href="/projects" className="no-underline hover:underline block">Projects</a>
-                    <a href="/about" className="no-underline hover:underline block">About</a>
-                    <a href="/press" className="no-underline hover:underline block">Press</a>
-                    <a href="/contact" className="no-underline hover:underline block">Contact</a>
+                    <LinkItem location="/" text="Home" />
+                    <LinkItem location="/projects" text="Projects" />
+                    <LinkItem location="/about" text="About" />
+                    <LinkItem location="/press" text="Press" />
+                    <LinkItem location="/team" text="Team" />
+                    <LinkItem location="/contact" text="Contact" />
                 </div>
                 <div className="flex-grow p-2">
                     <h3 className="font-bold">Social Media</h3>
@@ -31,11 +34,19 @@ const Footer = () => {
                 </div>
             </div>
             <div className="border-t border-gray-400 flex flex-row text-sm">
-                <p className="border-r border-gray-400 px-8 py-4">"Blatt Architects" was renamed in 2021 from it's previous name "Hornbeek Blatt Architects" when Anthony Blatt aquired sole ownership of the company.</p>
-                <p className="mx-8 py-4">We are a multi-faceted Architecture firm who has had their feet in many types of projects. Feel free to call and ask any questions if you have a project you'd like our help bringing to life.</p>
+                <p className="border-r border-gray-400 px-8 py-4">&quot;Blatt Architects&quot; was renamed in 2021 from it&apos;s previous name &quot;Hornbeek Blatt Architects&quot; when Anthony Blatt aquired sole ownership of the company.</p>
+                <p className="mx-8 py-4">We are a multi-faceted Architecture firm who has had their feet in many types of projects. Feel free to call and ask any questions if you have a project you&apos;d like our help bringing to life.</p>
             </div>
         </div>
     )
+}
+
+const LinkItem = ({location, text}: {location: string, text: string}) => {
+    return (
+        <Link href={location} passHref>
+            <p className="no-underline hover:underline block">{text}</p>
+        </Link>
+    );
 }
 
 export default Footer;
