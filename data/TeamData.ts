@@ -18,5 +18,5 @@ export const teamMembers = [
   { name: "Rainey High", nickname: "Rainey", email: "rhigh@blattarch.com", title: "Architect/Specification Writer", image: rainey },
   { name: "Billie Baker", nickname: "Billie", email: "billie@blattarch.com", title: "Financial Officer", image: billie},
   { name: "Brandon Davis", nickname: "Brandon", email: "bdavis@blattarch.com", title: "Student Intern Architect", image: brandon},
-  { name: "Chloe Sweet", nickname: "Chloe", email: "csweet@blattarch.com", title: "Receptionist / Student Intern", image: undefined}
+  //{ name: "Chloe Sweet", nickname: "Chloe", email: "csweet@blattarch.com", title: "Receptionist / Student Intern", image: undefined}
 ]
