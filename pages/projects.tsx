@@ -22,10 +22,10 @@ const ProjectsPage = () => {
 
 const FilterBar = ({ setType }: { setType: (value: ProjectType) => void }) => {
   return (
-    <div className="fixed bg-white flex flex-row border-b border-gray-400 w-full z-40">
+    <div className="fixed bg-white flex flex-row border-b border-gray-400 w-full z-40 mt-16">
       <p className="flex items-center text-sm border-r border-gray-400 px-3 bg-gray-100">Filter:</p>
       <CategoryFilter setType={setType} />
-      <p className="flex items-center text-sm border-r border-gray-400 px-3 bg-gray-100">Sort:</p>
+      {/*<p className="flex items-center text-sm border-r border-gray-400 px-3 bg-gray-100">Sort:</p> */}
       {/*<SortFilter />*/}
     </div>
   )
@@ -116,7 +116,7 @@ const SortFilter = () => {
 const ProjectList = ({ filter }: { filter: ProjectType }) => {
 
   return (
-    <div className="flex-wrap flex self-center w-full mt-16">
+    <div className="flex-wrap flex self-center w-full mt-24">
       {projectList.map((p, keyID) => (p.category === filter || filter === ProjectTypes.All) && <ProjectCard key={keyID} name={p.name} date={p.date} route={p.route} images={p.images} />)}
     </div>
   )
@@ -127,7 +127,7 @@ const ProjectCard = ({ name, date, route, images }: { name: string, date: string
   const router = useRouter();
 
   return (
-    <div className="w-1/2 h-[50vh] group bg-cover bg-center cursor-pointer" style={{ backgroundImage: `url(${images[0]})` }} onClick={() => {router.push('/project/' + route) }}>
+    <div className="md:w-1/2 w-full h-[50vh] group bg-cover bg-center cursor-pointer" style={{ backgroundImage: `url(${images[0]})` }} onClick={() => {router.push('/project/' + route) }}>
       <div className="group-hover:opacity-100 bg-opacity-60 transition-opacity ease-in-out opacity-0 w-full h-full z-10 text-black text-center bg-white">
         <div className="top-1/2 relative mt-8">
           <p className="pt-1 -mt-8 font-bold">{name}</p>
