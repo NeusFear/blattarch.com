@@ -1,5 +1,4 @@
-import { useEffect } from "react";
-import { useState } from "react"
+import { Key, useEffect, useState } from "react";
 
 const Carousel = ({images, autoAdvance}: {images: any, autoAdvance: boolean}) => {
 
@@ -48,7 +47,7 @@ const Carousel = ({images, autoAdvance}: {images: any, autoAdvance: boolean}) =>
                     <svg width="30" height="30"><polygon points="5, 13, 25, 25, 25, 0" fill="currentColor" /></svg>
                 </div>
                 <div className={(transition && "ease-in-out transition-transform duration-200 ") + "h-full transform flex flex-row"} style={{width: (100*images.length) + "vw ", transform: 'translate(-' + (100/images.length) * position + '%)'}}>
-                    {images.map((i, id) => <CarouselItem key={id} img={i} />)}
+                    {images.map((img: any, id: Key) => <CarouselItem key={id} img={img} />)}
                 </div>
             </div>
             <CarouselIndicators position={position} numSlides={images.length}/>
@@ -60,7 +59,7 @@ export default Carousel;
 
 export const CarouselItem = ({img}: {img: any}) => {
     return(
-        <div className="flex-grow h-full bg-cover bg-center" style={{ backgroundImage: `url(${img})`, width: '100%' }}></div>
+        <div className="flex-grow h-full bg-cover bg-center" style={{ backgroundImage: `url("${img}")`, width: '100%' }}></div>
     )
 }
 

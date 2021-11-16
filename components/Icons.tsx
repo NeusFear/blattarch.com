@@ -1,4 +1,6 @@
-export const SvgLogo = (props) => {
+import { SVGProps } from "react";
+
+export const SvgLogo = (props: JSX.IntrinsicAttributes & SVGProps<SVGSVGElement>) => {
   return (
     <svg
       xmlns="http://www.w3.org/2000/svg"

@@ -1,4 +1,5 @@
 import Footer from "../components/Footer";
+import Navbar from "../components/Navbar";
 
 const pressItems = [
   {publisher: "Smithsonian Magazine", projectName: "First American's Museum", author: "Jennifer Billock", date: "September 27, 2021", previewText: "A Brand-New Museum in Oklahoma Honors Indigenous People at Every Turn The team behind the First Americans Museum in Oklahoma City incorporated the traditions and spiritual beliefs of 39 tribal nations into its design", link: "https://www.smithsonianmag.com/travel/brand-new-museum-oklahoma-city-honors-indigenous-people-at-every-turn-180978742/"},
@@ -10,6 +11,7 @@ const pressItems = [
 const PressPage = () => {
     return (
       <div>
+        <Navbar />
         <div className="flex flex-col min-h-screen mt-16 xl:px-56 lg:px-36 px-4 mb-8">
           <BlattArchAnnoucement />
           <div className="w-full h-1 border-t border-gray-400 mb-8 mt-14"></div>
