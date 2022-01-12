@@ -31,19 +31,17 @@ const ProjectItem = ({ project }: { project: any }) => {
 
   const pressItemsForProject = pressItems.filter(x => x?.projectRoute === projectData.route);
 
-  console.log(pressItemsForProject);
-
   return (
     <div className="overflow-x-hidden">
       <div className="h-screen mb-10">
         <Carousel autoAdvance={false} images={projectData?.images} />
       </div>
       <p className="xl:ml-96 md:ml-24 font-semibold text-3xl ml-12">About {projectData?.name}</p>
-      <p className="xl:ml-96 md:ml-24 font-semibold ml-12">{projectData?.date}</p>
+      {projectData.date != "0000" && <p className="xl:ml-96 md:ml-24 font-semibold ml-12">{projectData?.date}</p>}
       <div className="xl:mx-96 md:mx-24 mb-10 mt-5 mx-10">
         {projectData?.desc}
       </div>
-      <p className="xl:ml-96 md:mx-24 font-semibold text-3xl mx-10">Articles on {projectData?.name}</p>
+      {pressItemsForProject.length > 0 && <p className="xl:ml-96 md:mx-24 font-semibold text-3xl mx-10">Articles on {projectData?.name}</p>}
       <div className="xl:mx-96 md:mx-24 mx-10 mb-10">
         {pressItemsForProject.map((item, itemIdx) => <PressItem key={itemIdx} publisher={item.publisher} projectName={item.projectName} author={item.author} date={item.date} previewText={item.previewText} link={item.link} />)}
       </div>

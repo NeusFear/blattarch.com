@@ -131,7 +131,7 @@ const ProjectCard = ({ name, date, route, images }: { name: string, date: string
       <div className="group-hover:opacity-100 bg-opacity-60 transition-opacity ease-in-out opacity-0 w-full h-full z-10 text-black text-center bg-white">
         <div className="top-1/2 relative mt-8">
           <p className="pt-1 -mt-8 font-bold">{name}</p>
-          <p className="pb-3 pt-1 text-xs">{date}</p>
+          {date != "0000" && <p className="pb-3 pt-1 text-xs">{date}</p>}
         </div>
       </div>
     </div>
