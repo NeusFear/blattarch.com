@@ -1,7 +1,10 @@
 const fam_entrance = '/images/projects/government/fam/entrance.jpg'
 const nbroad_umbrellas = '/images/projects/commercial/1007nbroadway/roof_umbrellas.jpg'
-import Footer from '../components/Footer';
-import Navbar from '../components/Navbar';
+const tennbroad_lobby = '/images/projects/commercial/1015nbroadway/lobby_desk.jpg'
+const cbl_wide = '/images/projects/commercial/citizensbank_lobby/wide.jpg'
+const edmondpw_front = '/images/projects/government/edmond_publicworks/front.jpg'
+import Footer from '../components/Footer'
+import Navbar from '../components/Navbar'
 
 const AboutPage = () => {
   return (
@@ -20,13 +23,13 @@ const AboutPage = () => {
         <AboutSection 
           title="Quality Commitments" 
           text="Blatt Architects is proud to provide for our clients high quality buildings that are tailored to the specific requirements for time, budget and energy efficiency. Our team understands that Time, Budget, Quality and Efficiency are elements that must be carefully balanced in order to create a successful project.  We also recognize that the correct approach might require additional effort on the part of the Design Team.  Blatt Architects is willing to provide the extra effort required to develop the proper scheme that each and every Owner deserves. " 
-          image={fam_entrance}
+          image={tennbroad_lobby}
           flipped={false} />
         <AboutSection
           title="LEED & Sustainable Design" 
           text="One of our inherent responsibilities as planners and designers is to carefully examine the environmental impacts of all building design, construction, and long term successful operation.  Our priority in preliminary discussions with all of our clients is to establish client and end-user goals in order to have a clear understanding of what essential “green” elements may be required
                 <br /> In any project, we will investigate every opportunity to reduce negative effects on the natural environment and enhance the working environment through design techniques.  As standard practices of considerate design we will implement “green / sustainable” ideals with, or without parameters, of an industry rating system.  Programming, planning and design components available to the design team will be fully explored and evaluated as required to provide a cost effective and successfully accredited project, based on design and budget requirements of the client." 
-          image={nbroad_umbrellas}
+          image={cbl_wide}
           flipped={true} />
         <AboutSection 
           title="Services" 
@@ -43,7 +46,7 @@ const AboutPage = () => {
           <nl />•  Negotiation with the General Contractor
           <nl />•  Construction Observation
       " 
-          image={fam_entrance}
+          image={edmondpw_front}
           flipped={false} />
           <Footer />
       </div>
