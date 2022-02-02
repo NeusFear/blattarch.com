@@ -7,9 +7,9 @@ const PressPage = () => {
       <div>
         <Navbar />
         <div className="flex flex-col min-h-screen mt-16 xl:px-56 lg:px-36 px-4 mb-8">
-          <BlattArchAnnoucement />
-          <div className="w-full h-1 border-t border-gray-400 mb-8 mt-14"></div>
           {pressItems.map((item, itemIdx) => <PressItem key={itemIdx} publisher={item.publisher} projectName={item.projectName} author={item.author} date={item.date} previewText={item.previewText} link={item.link} />)}
+          <div className="w-full h-1 border-t border-gray-400 mb-8 mt-14"></div>
+          <BlattArchAnnoucement />
         </div>
         <Footer />
       </div>
@@ -48,7 +48,7 @@ const PressItem = ({publisher, projectName, author, date, previewText, link}: {p
 
 const BlattArchAnnoucement = () => {
   return(
-    <div className="bg-gray-100 rounded-md shadow-md w-full p-4 mt-8">
+    <div className="bg-gray-100 rounded-md shadow-md w-full p-4 mt-8" id="previously-hornbeek-blatt-architects">
       <div className="flex flex-row">
         <p className="text-xl font-semibold transition-colors duration-75">David Hornbeek Departs from Hornbeek Blatt Architects, Tony Blatt to Serve as President</p>
       </div>

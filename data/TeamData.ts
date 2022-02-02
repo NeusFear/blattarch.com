@@ -11,9 +11,9 @@ const yara = '/images/staff/yara.jpg';
 export type TeamMember = { name: string, nickname: string, email: string, title: string, image: string };
 
 export const teamMembers = [
-  { name: "Anthony Blatt", nickname: "Tony", email: "ablatt@blattarch.com", title: "Principal", image: tony},
-  { name: "Julie Blatt", nickname: "Julie", email: "jblatt@blattarch.com", title: "Sr. Project Manager", image: julie},
-  { name: "James Maggio", nickname: "Jim", email: "jmaggio@blattarch.com", title: "Project Architect", image: jim},
+  { name: "Anthony Blatt", nickname: "Tony", email: "ablatt@blattarch.com", title: "President / CEO", image: tony},
+  { name: "Julie Blatt", nickname: "Julie", email: "jblatt@blattarch.com", title: "COO / Managing Principal", image: julie},
+  { name: "Jim Maggio", nickname: "Jim", email: "jmaggio@blattarch.com", title: "Project Manager", image: jim},
   { name: "Carlie Gruel", nickname: "Carlie", email: "cgruel@blattarch.com", title: "Project Architect", image: carlie},
   { name: "Veronica Secculini", nickname: "Veronica", email: "vseculini@blattarch.com", title: "Intern Architect", image: veronica },
   { name: "Yara Albotros", nickname: "Yara", email: "yalbotros@blattarch.com", title: "Intern Architect", image: yara },

@@ -15,7 +15,10 @@ const Navbar = () => {
             <div className="flex items-center justify-between h-16">
               <div className="flex items-center">
                 <div className="flex-shrink-0 text-gray-800">
-                  <NavButton location="/"><SvgLogo className="w-10 h-10" /></NavButton>
+                  <NavButton location="/">
+                    <SvgLogo className="w-10 h-10" />
+                    <p className="mt-2 ml-4 text-gray-700 hover:text-black">Blatt Architects</p>
+                  </NavButton>
                 </div>
                 <div className="hidden md:block">
                   <div className="ml-10 flex space-x-2 text-gray-700 hover:text-black w-full text-center">
@@ -83,7 +86,7 @@ const NavButton = ({ location, children }: { location: string, children?: ReactN
   }
 
   return (
-    <button className="hover:bg-white py-2 px-4 no-underline hover:bg-opacity-40 transition-all duration-100" onClick={handleClick}>
+    <button className="hover:bg-white py-2 px-4 no-underline hover:bg-opacity-40 transition-all duration-100 flex flex-row" onClick={handleClick}>
       {children}
     </button>
   );

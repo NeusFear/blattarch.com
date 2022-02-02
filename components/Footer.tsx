@@ -30,12 +30,8 @@ const Footer = () => {
                 <div className="flex-grow p-2">
                     <h3 className="font-bold">Social Media</h3>
                     <a href="https://www.facebook.com/Hornbeek-Blatt-Architects-103985636299558/" className="no-underline hover:underline block">Facebook</a>
-                    <a href="https://www.instagram.com/hornbeekblatt/" className="no-underline hover:underline block">Instagram</a>
+                    <a href="https://www.instagram.com/blattarch/" className="no-underline hover:underline block">Instagram</a>
                 </div>
-            </div>
-            <div className="border-t border-gray-400 flex flex-row text-sm">
-                <p className="border-r border-gray-400 px-8 py-4">&quot;Blatt Architects&quot; was renamed in 2021 from it&apos;s previous name &quot;Hornbeek Blatt Architects&quot; when Anthony Blatt aquired sole ownership of the company.</p>
-                <p className="mx-8 py-4">We are a multi-faceted Architecture firm who has had their feet in many types of projects. Feel free to call and ask any questions if you have a project you&apos;d like our help bringing to life.</p>
             </div>
         </div>
     )

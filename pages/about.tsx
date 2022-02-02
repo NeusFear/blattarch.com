@@ -10,9 +10,10 @@ const AboutPage = () => {
   return (
     <div className="w-full">
       <Navbar />
+      <div className="mt-16"></div>
         <AboutSection 
           title="Firm History" 
-          text="Celebrating 20+ years, Blatt Architects, previously Hornbeek Blatt Architects, is a professional architectural firm headquartered in Edmond, Oklahoma.  Blatt Architects has developed long-term client partnerships across the State of Oklahoma through their collaborative approach and focus on sustainable, timeless solutions for all to enjoy.  Providing professional services for a wide range of projects that include cultural centers, corporate, hospitality, educational, government, medical and residential, our work is site-specific, detail-oriented and client-centric.  Blatt Architects has been designing award winning architecture for over twenty years and was named the 2011 AIA Central Oklahoma &quot;Outstanding Firm of the Year.&quot; Blatt Architects has achieved this distinction through leadership, vision, and a commitment to quality design." 
+          text="Celebrating 20+ years, Blatt Architects, previously Hornbeek Blatt Architects, is a professional architectural firm headquartered in Edmond, Oklahoma.  Blatt Architects has developed long-term client partnerships across the State of Oklahoma through their collaborative approach and focus on sustainable, timeless solutions for all to enjoy.  Providing professional services for a wide range of projects that include cultural centers, corporate, hospitality, educational, government, medical and residential, our work is site-specific, detail-oriented and client-centric.  Blatt Architects has been designing award winning architecture for over twenty years and, as Hornbeek Blatt, was named the 2011 AIA Central Oklahoma &quot;Outstanding Firm of the Year.&quot; Blatt Architects has achieved this distinction through leadership, vision, and a commitment to quality design." 
           image={fam_entrance}
           flipped={false} />
         <AboutSection
@@ -34,7 +35,7 @@ const AboutPage = () => {
         <AboutSection 
           title="Services" 
           text="
-          Blatt has a firmly established reputation for design excellence, built on our partners’ multifarious expertise and enhanced by our incorporation of innovative technologies. Our firm’s principals are licensed architects with a combined fifty years of experience in this field. 
+          Blatt has a firmly established reputation for design excellence, built on our partners’ multifarious expertise and enhanced by our incorporation of innovative technologies. Our firm’s principals are licensed architects and engineers with a combined fifty years of experience in this field. 
           Specializations provided by the Firm for this project include, but are not limited to: 
           <br />
           <nl />•  Program Analysis and Programming
