@@ -1,8 +1,8 @@
 const fam_entrance = '/images/projects/government/fam/entrance.jpg'
-const nbroad_umbrellas = '/images/projects/commercial/1007nbroadway/roof_umbrellas.jpg'
-const tennbroad_lobby = '/images/projects/commercial/1015nbroadway/lobby_desk.jpg'
-const cbl_wide = '/images/projects/commercial/citizensbank_lobby/wide.jpg'
-const edmondpw_front = '/images/projects/government/edmond_publicworks/front.jpg'
+const nbroad_umbrellas = '/images/projects/commercial/1007-n-broadway/roof_umbrellas.jpg'
+const tennbroad_lobby = '/images/projects/commercial/1015-n-broadway/lobby_desk.jpg'
+const cbl_wide = '/images/projects/commercial/citizens-bank-lobby/wide.jpg'
+const edmondpw_front = '/images/projects/government/edmond-public-works/front.jpg'
 import Footer from '../components/Footer'
 import Navbar from '../components/Navbar'
 

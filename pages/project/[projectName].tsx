@@ -1,19 +1,16 @@
-import { useRouter } from "next/router";
 import Carousel from "../../components/Carousel";
 import Footer from "../../components/Footer";
 import Navbar from "../../components/Navbar";
 import { pressItems } from "../../data/PressData";
-import { projectList } from "../../data/ProjectData";
+import { projectList, ProjectType } from "../../data/ProjectData";
+import { getImageLocations } from "../../lib/projectApi";
 
-const ProjectInfoPage = () => {
-
-  const router = useRouter();
-  const projectName = router.query.projectName;
+const ProjectInfoPage = ({ projectData, images }: { projectData: ProjectType, images: string[] }) => {
 
   return (
     <div>
       <Navbar />
-      <ProjectItem project={projectName} />
+      <ProjectItem projectData={projectData} images={images} />
       <Footer />
     </div>
   );
@@ -21,9 +18,7 @@ const ProjectInfoPage = () => {
 
 export default ProjectInfoPage;
 
-const ProjectItem = ({ project }: { project: any }) => {
-
-  const projectData = projectList.find(x => x.route === project);
+const ProjectItem = ({ projectData, images }: { projectData: ProjectType, images: string[] }) => {
 
   if (projectData === undefined) {
     return <div>Loading...</div>
@@ -34,7 +29,7 @@ const ProjectItem = ({ project }: { project: any }) => {
   return (
     <div className="overflow-x-hidden">
       <div className="h-screen mb-10">
-        <Carousel autoAdvance={false} images={projectData?.images} />
+        <Carousel autoAdvance={false} images={images ?? ['/images/office/front.jpg']} />
       </div>
       <p className="xl:ml-96 md:ml-24 font-semibold text-3xl ml-12">{projectData?.desc != "" && "About "}{projectData?.name}</p>
       {projectData.date != "0000" && <p className="xl:ml-96 md:ml-24 font-semibold ml-12">{projectData?.date}</p>}
@@ -78,4 +73,35 @@ const PressItem = ({ publisher, projectName, author, date, previewText, link }: 
     </div>
 
   );
+}
+
+export async function getStaticProps({ params }: { params: { projectName: string } }) {
+
+  const data: ProjectType | undefined = projectList.find(x => x.route === params.projectName);
+  const images: string[] = await getImageLocations(data);
+
+  return {
+    props: {
+      projectData: {
+        ...data
+      },
+      images
+    }
+  }
+
+}
+
+export async function getStaticPaths() {
+  const posts: ProjectType[] = projectList;
+
+  return {
+    paths: posts.map((post) => {
+      return {
+        params: {
+          projectName: post.route,
+        },
+      }
+    }),
+    fallback: false,
+  }
 }

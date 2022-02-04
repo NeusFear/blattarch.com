@@ -4,11 +4,11 @@ import { useRouter } from 'next/router'
 import { Fragment, useState } from 'react'
 import Footer from '../components/Footer'
 import Navbar from '../components/Navbar'
-import { projectCategories, projectList, ProjectType, ProjectTypes, sortFilters } from '../data/ProjectData'
+import { projectCategories, ProjectCategoryType, projectList, ProjectTypes, sortFilters } from '../data/ProjectData'
 
 const ProjectsPage = () => {
 
-  const [typeFilter, setTypeFilter] = useState<ProjectType>(ProjectTypes.All);
+  const [typeFilter, setTypeFilter] = useState<ProjectCategoryType>(ProjectTypes.All);
 
   return (
     <div>
@@ -20,7 +20,7 @@ const ProjectsPage = () => {
   )
 };
 
-const FilterBar = ({ setType }: { setType: (value: ProjectType) => void }) => {
+const FilterBar = ({ setType }: { setType: (value: ProjectCategoryType) => void }) => {
   return (
     <div className="fixed bg-white flex flex-row border-b border-gray-400 w-full z-40 mt-16">
       <p className="flex items-center text-sm border-r border-gray-400 px-3 bg-gray-100">Filter:</p>
@@ -31,14 +31,14 @@ const FilterBar = ({ setType }: { setType: (value: ProjectType) => void }) => {
   )
 }
 
-const CategoryFilter = ({ setType }: { setType: (value: ProjectType) => void }) => {
+const CategoryFilter = ({ setType }: { setType: (value: ProjectCategoryType) => void }) => {
 
-  function setSelectedWrap(selected: ProjectType) {
+  function setSelectedWrap(selected: ProjectCategoryType) {
     setType(selected);
     setSelected(selected);
   }
 
-  const [selected, setSelected] = useState<ProjectType>(ProjectTypes.All);
+  const [selected, setSelected] = useState<ProjectCategoryType>(ProjectTypes.All);
 
   return (
     <div className="w-72 sticky top-16 z-20">
@@ -113,11 +113,11 @@ const SortFilter = () => {
   )
 }
 
-const ProjectList = ({ filter }: { filter: ProjectType }) => {
+const ProjectList = ({ filter }: { filter: ProjectCategoryType }) => {
 
   return (
     <div className="flex-wrap flex self-center w-full mt-24">
-      {projectList.map((p, keyID) => (p.category === filter || filter === ProjectTypes.All) && <ProjectCard key={keyID} name={p.name} date={p.date} route={p.route} images={p.images} />)}
+      {projectList.map((p, keyID) => (p.category === filter || filter === ProjectTypes.All) && <ProjectCard key={keyID} name={p.name} date={p.date} route={p.route} images={["/images/projects/" + p.category.path + "/" + p.route + "/" + p.cover]} />)}
     </div>
   )
 }
