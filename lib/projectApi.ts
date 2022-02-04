@@ -3,8 +3,8 @@ import { join } from "path";
 import { ProjectType } from "../data/ProjectData";
 
 export function getImages(project: ProjectType | undefined) { 
-  const category = project?.category.path;
-  const projectRoute = project?.route;
+  const category: string = project?.category?.path ?? "any";
+  const projectRoute: string = project?.route ?? "404";
   const directory = join(process.cwd(), 'public', 'images', 'projects', category, projectRoute)
   return readdirSync(directory)
 }
