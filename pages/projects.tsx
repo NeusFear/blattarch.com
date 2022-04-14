@@ -22,7 +22,7 @@ const ProjectsPage = () => {
 
 const FilterBar = ({ setType }: { setType: (value: ProjectCategoryType) => void }) => {
   return (
-    <div className="fixed bg-white flex flex-row border-b border-gray-400 w-full z-40 mt-16">
+    <div className="fixed bg-white flex flex-row border-b border-t border-gray-400 w-full z-40">
       <p className="flex items-center text-sm border-r border-gray-400 px-3 bg-gray-100">Filter:</p>
       <CategoryFilter setType={setType} />
       {/*<p className="flex items-center text-sm border-r border-gray-400 px-3 bg-gray-100">Sort:</p> */}
@@ -116,7 +116,7 @@ const SortFilter = () => {
 const ProjectList = ({ filter }: { filter: ProjectCategoryType }) => {
 
   return (
-    <div className="flex-wrap flex self-center w-full mt-24">
+    <div className="flex-wrap flex self-center w-full mt-8">
       {projectList.map((p, keyID) => (p.category === filter || filter === ProjectTypes.All) && <ProjectCard key={keyID} name={p.name} date={p.date} route={p.route} images={["/images/projects/" + p.category.path + "/" + p.route + "/" + p.cover]} />)}
     </div>
   )

@@ -1,5 +1,6 @@
 import Footer from "../components/Footer";
 import Navbar from "../components/Navbar";
+import { MergerPressLines, MergerTitle } from "../data/MergerData";
 import { pressItems } from "../data/PressData";
 
 const PressPage = () => {
@@ -7,6 +8,8 @@ const PressPage = () => {
       <div>
         <Navbar />
         <div className="flex flex-col min-h-screen mt-16 xl:px-56 lg:px-36 px-4 mb-8">
+          <MergerAnnouncement lines={MergerPressLines}/>
+          <div className="w-full h-1 border-t border-gray-400 mb-8 mt-14"></div>
           {pressItems.map((item, itemIdx) => <PressItem key={itemIdx} publisher={item.publisher} projectName={item.projectName} author={item.author} date={item.date} previewText={item.previewText} link={item.link} />)}
           <div className="w-full h-1 border-t border-gray-400 mb-8 mt-14"></div>
           <BlattArchAnnoucement />
@@ -57,6 +60,20 @@ const BlattArchAnnoucement = () => {
       <p className="text-xs text-gray-500 mb-2">With over 40 years of experience, David Hornbeek has been serving as President of the firm since 1999 and has been active in the Oklahoma Board of Architects, Landscape Architects and Interior Designers, various NCARB committees, visiting adjunct professor and member of the University of Oklahoma School of Architecture’s Professional Advisory Board and Board of Visitors, and the AIA Central Oklahoma chapter.  Currently, Hornbeek is serving as the the Region 5 director on the NCARB Board of Directors.</p>
       <p className="text-xs text-gray-500 mb-2">“David has made an incredible impact on the built environment on a variety of projects that span the globe with a number of prominent projects in our great state of Oklahoma,” said Tony Blatt.  “He has been a mentor to many, making an impact on numerous professionals in our field.  I thank David for all he has done for the development and progress of our firm.”</p>
       <p className="text-xs text-gray-500 mb-2">Hornbeek Blatt Architects, P.C., founded in 1999 as a partnership, has grown to become a well-respected multi-service architectural firm in Edmond, Oklahoma.  Named the 2011 AIA Central Oklahoma “Outstanding Firm of the Year,” Hornbeek Blatt has been designing award winning architecture for over 20 years through leadership, vision, and a commitment to quality design.  The firm has also been heading a team of twelve different international consultants as the Co-Prime Architect for First Americans Museum, scheduled to open September 18, 2021.</p>
+    </div>
+  );
+}
+
+const MergerAnnouncement = ({lines}: {lines: string[]}) => {
+  return(
+    <div className="bg-gray-100 rounded-md shadow-md w-full p-4 mt-8">
+      <div className="flex flex-row">
+        <p className="text-xl font-semibold transition-colors duration-75">{MergerTitle}</p>
+      </div>
+      <div className="w-full h-1 border-t border-gray-400 mb-2"></div>
+      {lines.map((item, itemIdx) => 
+        <p className="text-xs text-gray-500 mb-2" key={"mergerline" + itemIdx}>{item}</p>
+      )}
     </div>
   );
 }
