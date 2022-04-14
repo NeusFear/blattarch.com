@@ -17,6 +17,7 @@ const Merger = ({open} : {open: boolean}) => {
                 </div>
                 <h1 className="text-xl">{MergerTitle}</h1>
                 <p className="text-sm lg:w-1/2 text-center m-2">{MergerBannerText}</p>
+                <p className="mb-2 text-sm">- Tony Blatt, President Blatt Architects</p>
                 <LinkItem location={"/press#" + MergerRoute} text="Read More" />
                 <div className="absolute top-20 right-10">
                     <svg className="block h-6 w-6 hover:text-gray-400 cursor-pointer" onClick={() => setOpen(false)} xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor" aria-hidden="true" > <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M6 18L18 6M6 6l12 12" /> </svg>

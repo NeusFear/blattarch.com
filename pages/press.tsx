@@ -74,6 +74,7 @@ const MergerAnnouncement = ({lines}: {lines: string[]}) => {
       {lines.map((item, itemIdx) => 
         <p className="text-xs text-gray-500 mb-2" key={"mergerline" + itemIdx}>{item}</p>
       )}
+      <a className="underline" href="ADG BA News Release.pdf">View the Press Release</a>
     </div>
   );
 }
