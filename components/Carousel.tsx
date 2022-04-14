@@ -1,6 +1,6 @@
 import { Key, useEffect, useState } from "react";
 
-const Carousel = ({images, autoAdvance}: {images: string[], autoAdvance: boolean}) => {
+const Carousel = ({images, autoAdvance, bubbles}: {images: string[], autoAdvance: boolean, bubbles: boolean}) => {
 
     const [position, setPosition] = useState(0);
     const [transition, setTransition] = useState(true);
@@ -50,7 +50,7 @@ const Carousel = ({images, autoAdvance}: {images: string[], autoAdvance: boolean
                     {images.map((img: string, id: Key) => <CarouselItem key={id} img={img} />)}
                 </div>
             </div>
-            <CarouselIndicators position={position} numSlides={images.length}/>
+            {bubbles && <CarouselIndicators position={position} numSlides={images.length}/>}
         </div>
     )
 }

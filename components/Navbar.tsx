@@ -2,10 +2,14 @@ import { Transition } from "@headlessui/react";
 import { useRouter } from 'next/router';
 import { ReactNode, useState } from "react";
 import { SvgLogo } from "./Icons";
+import Merger from "./Merger";
 
 const Navbar = () => {
 
   const [isOpen, setIsOpen] = useState(false);
+
+  const router = useRouter();
+  const routeName = router.pathname;
 
   return (
     <div className="overflow-hidden">
@@ -73,6 +77,7 @@ const Navbar = () => {
           </Transition>
         </nav>
       </div>
+      {routeName == "/press" || <Merger open={routeName == "/"} />}
     </div>
   );
 }

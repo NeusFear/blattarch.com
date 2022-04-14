@@ -29,7 +29,7 @@ const ProjectItem = ({ projectData, images }: { projectData: ProjectType, images
   return (
     <div className="overflow-x-hidden">
       <div className="h-screen mb-10">
-        <Carousel autoAdvance={false} images={images ?? ['/images/office/front.jpg']} />
+        <Carousel autoAdvance={false} images={images ?? ['/images/office/front.jpg']} bubbles={true} />
       </div>
       <p className="xl:ml-96 md:ml-24 font-semibold text-3xl ml-12">{projectData?.desc != "" && "About "}{projectData?.name}</p>
       {projectData.date != "0000" && <p className="xl:ml-96 md:ml-24 font-semibold ml-12">{projectData?.date}</p>}

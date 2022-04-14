@@ -1,5 +1,6 @@
 import Carousel from '../components/Carousel';
 import Footer from '../components/Footer';
+import Merger from '../components/Merger';
 import Navbar from '../components/Navbar';
 const nbroad_umbrellas = '/images/projects/commercial/1007-n-broadway/roof_umbrellas.jpg';
 const cbl_offices = '/images/projects/commercial/citizens-bank-lobby/offices.jpg';
@@ -22,7 +23,7 @@ const HomePage = () => {
     <>
       <Navbar />
       <div className="h-screen w-full overflow-x-hidden">
-        <Carousel images={images} autoAdvance={true} />
+        <Carousel images={images} autoAdvance={true} bubbles={false} />
       </div>
       <Footer />
     </>

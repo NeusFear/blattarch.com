@@ -40,7 +40,7 @@ const Footer = () => {
 const LinkItem = ({location, text}: {location: string, text: string}) => {
     return (
         <Link href={location} passHref>
-            <p className="no-underline hover:underline block">{text}</p>
+            <p className="no-underline hover:underline block cursor-pointer">{text}</p>
         </Link>
     );
 }
