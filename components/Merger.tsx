@@ -1,5 +1,5 @@
-import Link from 'next/link';
 import Image from 'next/image';
+import Link from 'next/link';
 import { useState } from 'react';
 import { MergerBannerText, MergerRoute, MergerTitle } from '../data/MergerData';
 
@@ -12,7 +12,7 @@ const Merger = ({open} : {open: boolean}) => {
             <div className="mt-16 p-10 items-center flex flex-col">
                 <div className="h-40 overflow-hidden">
                     <div className="relative h-80 w-80 -mt-20">
-                        <Image src="/images/ADG-Blatt-Once.gif" layout="fill" />
+                        <Image src="/images/ADG-Blatt-Once.gif" layout="fill" alt="Merger Gif" />
                     </div>
                 </div>
                 <h1 className="text-xl">{MergerTitle}</h1>

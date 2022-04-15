@@ -38,7 +38,7 @@ const ProjectItem = ({ projectData, images }: { projectData: ProjectType, images
       </div>
       {pressItemsForProject.length > 0 && <p className="xl:ml-96 md:mx-24 font-semibold text-3xl mx-10">Articles on {projectData?.name}</p>}
       <div className="xl:mx-96 md:mx-24 mx-10 mb-10">
-        {pressItemsForProject.map((item, itemIdx) => <PressItem key={itemIdx} publisher={item.publisher} projectName={item.projectName} author={item.author} date={item.date} previewText={item.previewText} link={item.link} />)}
+        {pressItemsForProject.map((item, itemIdx) => <PressItem key={itemIdx} publisher={item.publisher} projectName={item.projectName || ""} author={item.author} date={item.date} previewText={item.previewText} link={item.link} />)}
       </div>
     </div>
   );

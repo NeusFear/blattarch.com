@@ -4,30 +4,34 @@ import { MergerPressLines, MergerTitle } from "../data/MergerData";
 import { pressItems } from "../data/PressData";
 
 const PressPage = () => {
-    return (
-      <div>
-        <Navbar />
-        <div className="flex flex-col min-h-screen mt-16 xl:px-56 lg:px-36 px-4 mb-8">
-          <MergerAnnouncement lines={MergerPressLines}/>
-          <div className="w-full h-1 border-t border-gray-400 mb-8 mt-14"></div>
-          {pressItems.map((item, itemIdx) => <PressItem key={itemIdx} publisher={item.publisher} projectName={item.projectName} author={item.author} date={item.date} previewText={item.previewText} link={item.link} />)}
-          <div className="w-full h-1 border-t border-gray-400 mb-8 mt-14"></div>
-          <BlattArchAnnoucement />
-        </div>
-        <Footer />
+  return (
+    <div>
+      <Navbar />
+      <div className="flex flex-col min-h-screen mt-16 xl:px-56 lg:px-36 px-4 mb-8">
+        <MergerAnnouncement lines={MergerPressLines} />
+        <div className="w-full h-1 border-t border-gray-400 mb-8 mt-14"></div>
+        {pressItems.map((item, itemIdx) => <PressItem key={itemIdx} publisher={item.publisher} projectName={item.projectName} author={item.author} date={item.date} previewText={item.previewText} link={item.link} />)}
+        <div className="w-full h-1 border-t border-gray-400 mb-8 mt-14"></div>
+        <BlattArchAnnoucement />
       </div>
-    );
+      <Footer />
+    </div>
+  );
 };
 
 export default PressPage;
 
-const PressItem = ({publisher, projectName, author, date, previewText, link}: {publisher: string, projectName: string, author: string | undefined, date: string | undefined, previewText: string, link: string}) => {
-  return(
+const PressItem = ({ publisher, projectName, author, date, previewText, link }: { publisher: string, projectName: string | undefined, author: string | undefined, date: string | undefined, previewText: string, link: string }) => {
+  return (
     <a className="bg-gray-100 rounded-md shadow-md w-full p-4 mt-4 group cursor-pointer" href={link} target="_blank" rel="noreferrer">
       <div className="flex flex-row">
         <p className="text-xl font-semibold group-hover:text-teal-600 transition-colors duration-75">{publisher}</p>
-        <p className="mt-2.5 text-gray-600 mx-1 text-xs">on</p>
-        <p className="mt-1 group-hover:text-teal-800 duration-75">{projectName}</p>
+        {(projectName !== undefined) &&
+          <p className="mt-2.5 text-gray-600 mx-1 text-xs">on</p>
+        }
+        {(projectName !== undefined) &&
+          <p className="mt-1 group-hover:text-teal-800 duration-75">{projectName}</p>
+        }
       </div>
       <div className="w-full h-1 border-t border-gray-400"></div>
       <p className="text-xs text-gray-500">{previewText}</p>
@@ -50,7 +54,7 @@ const PressItem = ({publisher, projectName, author, date, previewText, link}: {p
 }
 
 const BlattArchAnnoucement = () => {
-  return(
+  return (
     <div className="bg-gray-100 rounded-md shadow-md w-full p-4 mt-8" id="previously-hornbeek-blatt-architects">
       <div className="flex flex-row">
         <p className="text-xl font-semibold transition-colors duration-75">David Hornbeek Departs from Hornbeek Blatt Architects, Tony Blatt to Serve as President</p>
@@ -64,14 +68,14 @@ const BlattArchAnnoucement = () => {
   );
 }
 
-const MergerAnnouncement = ({lines}: {lines: string[]}) => {
-  return(
+const MergerAnnouncement = ({ lines }: { lines: string[] }) => {
+  return (
     <div className="bg-gray-100 rounded-md shadow-md w-full p-4 mt-8">
       <div className="flex flex-row">
         <p className="text-xl font-semibold transition-colors duration-75">{MergerTitle}</p>
       </div>
       <div className="w-full h-1 border-t border-gray-400 mb-2"></div>
-      {lines.map((item, itemIdx) => 
+      {lines.map((item, itemIdx) =>
         <p className="text-xs text-gray-500 mb-2" key={"mergerline" + itemIdx}>{item}</p>
       )}
       <a className="underline" href="ADG BA News Release.pdf">View the Press Release</a>
